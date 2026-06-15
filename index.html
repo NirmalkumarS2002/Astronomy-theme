@@ -10,120 +10,224 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
-</head>
 
-<style>
-    * {
-        padding: 0px;
-        margin: 0px;
-        box-sizing: border-box;
-        font-family: "Noto Sans", sans-serif;
-    }
-
-    body {
-        overflow-x: hidden;
-    }
-
-    .header {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 20px;
-        background: black;
-        align-items: center;
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-    }
-
-    .logo img {
-        width: 190px;
-    }
-
-    .menus {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 50px;
-    }
-
-    .menus ul {
-        display: flex;
-        gap: 30px;
-    }
-
-    .menus ul li {
-        list-style: none;
-    }
-
-    .menus ul li a {
-        text-decoration: none;
-        font-size: 18px;
-        color: white;
-          position: relative;
-    }
-
-     .menus ul li a::after{
-        content: "";
-        background: orange;
-        height: 2px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        bottom: -5px;
-         transition: 0.3s ease;
-     }
-
-     .menus ul li a:hover::after{
-           width: 100%;
-        
-     }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
 
 
-    .menu-btn,
-    .close-btn {
-        display: none;
-    }
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
 
-    .nav-btn {
-        padding: 10px 30px;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 10px;
-        border: none;
-        background: orange;
-    }
+        }
 
-    @media (max-width:780px) {
+        body {
+            overflow-x: hidden;
+        }
 
-        .menus {
-            display: none;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: black;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            font-family: "Noto Sans", sans-serif;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
         }
 
         .logo img {
-            width: 160px;
+            width: 190px;
         }
 
-        .menu-btn {
+        .menus {
             display: flex;
-            color: white;
             align-items: center;
-            cursor: pointer;
+            justify-content: space-between;
+            gap: 50px;
         }
 
+        .menus ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menus ul li {
+            list-style: none;
+        }
+
+        .menus ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            position: relative;
+        }
+
+        .menus ul li a::after {
+            content: "";
+            background: orange;
+            height: 2px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            bottom: -5px;
+            transition: 0.3s ease;
+        }
+
+        .menus ul li a:hover::after {
+            width: 100%;
+
+        }
+
+
+        .menu-btn,
         .close-btn {
             display: none;
-            color: white;
-            align-items: center;
-            cursor: pointer; 
+        }
+
+        .nav-btn {
+            padding: 10px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+            background: orange;
+        }
+
+        @media (max-width:780px) {
+
+            .menus {
+                display: none;
+                position: absolute;
+                flex-direction: column;
+                justify-content: flex-start;
+                background: black;
+                align-items: flex-start;
+                height: 100vh;
+                top: 0px;
+                left: 0px;
+                width: 70%;
+                padding: 27px 25px;
+            }
+
+            .menus ul {
+                flex-direction: column;
+            }
+
+            .logo img {
+                width: 160px;
+            }
+
+            .menu-btn {
+                display: flex;
+                color: white;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            .close-btn {
+                display: none;
+                color: white;
+                align-items: center;
+                cursor: pointer;
+            }
         }
 
 
+        /* hero seciton*/
 
-    }
-</style>
+        .hero-section {
+            background: url("./src/homebg.webp");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 140vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-main {
+            margin-top: 100px;
+            padding: 15px;
+        }
+
+        .hero-main>p:first-child {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+        .hero-main>p span {
+            font-size: 10px;
+            margin-right: 8px;
+            color: green;
+            font-weight: bold;
+            border-radius: 50%;
+            box-shadow: 1px 2px 6px green;
+            margin-bottom: 20px;
+        }
+
+        .hero-main h1 {
+            font-size: clamp(35px, 5vw, 70px);
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 20px
+        }
+
+        .hero-para {
+            width: 100%;
+            max-width: 700px;
+            line-height: 1.9;
+            margin-bottom: 100px;
+        }
+
+        .hero-footer {
+            display: flex;
+            width: 100%;
+            text-align: left;
+            justify-content: space-around;
+        }
+
+        .hero-footer-box::before {
+            content: "";
+            height: 2px;
+            background: white;
+            width: 100%;
+            top: -15px;
+            position: absolute;
+        }
+
+        .hero-footer-box {
+            position: relative;
+        }
+
+        .hero-footer p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            word-spacing: 5px;
+        }
+
+        .hero-footer h2 {
+            font-size: 30px;
+        }
+    </style>
 
 <body>
 
@@ -155,6 +259,70 @@
 
     </section>
 
+    <section class="hero-section">
+
+        <div class="hero-main">
+            <p> <span class="material-symbols-outlined">circle</span>Active Mission</p>
+            <h1>Humanity's <br> Journey Into <br> space</h1>
+
+            <p class="hero-para">We Are Dedicated to advancing Humanity by expoloring the
+                cosmos through groundbreaking speace missions, culting
+                - edge research , innovative technologies</p>
+        </div>
+
+        <div class="hero-footer">
+
+            <div class="hero-footer-box">
+                <p>Night sky observings challenge </p>
+                <h2>May Object List</h2>
+            </div>
+
+            <div class="hero-footer-box">
+                <p>New e - boox</p>
+                <h2>Orbit Science Highlights</h2>
+            </div>
+
+            <div class="hero-footer-box">
+                <p>Onine Activities</p>
+                <h2>Hearing Orbit</h2>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        let menubtn = document.querySelector(".menu-btn")
+        let menus = document.querySelector(".menus")
+        let closebtn = document.querySelector(".close-btn")
+
+        menubtn.addEventListener("click", () => {
+            menubtn.style.display = "none"
+            closebtn.style.display = "block"
+            menus.style.display = "flex"
+        })
+
+        closebtn.addEventListener("click", () => {
+            menubtn.style.display = "block"
+            closebtn.style.display = "none"
+            menus.style.display = "none"
+        })
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 780) {
+                menubtn.style.display = "none"
+                closebtn.style.display = "none"
+                menus.style.display = "flex"
+            }
+            else {
+                menubtn.style.display = "block"
+                closebtn.style.display = "none"
+                menus.style.display = "none"
+            }
+
+        })
+
+    </script>
 </body>
+
 
 </html>
