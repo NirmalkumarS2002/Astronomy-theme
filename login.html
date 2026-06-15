@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy - Login page</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Noto Sans", sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(124deg, rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.637)), url('./src/logo-bg.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 50px 10px;
+        overflow-x: hidden;
+    }
+
+    .login-page {
+        border: 1px solid orange;
+        color: white;
+        background: rgba(0, 0, 0, 0.664);
+        padding: 20px;
+        width: 100%;
+        max-width: 350px;
+        border-radius: 30px;
+    }
+
+    .login-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-top img {
+        width: 180px;
+    }
+
+    .login-top h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .login-top p {
+        font-size: 13px;
+    }
+
+    .form {
+        width: 100%;
+        margin-block: 30px;
+    }
+
+    .input-box {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .input-box label {
+        font-size: 13px;
+        color: orange;
+    }
+
+    .input-field {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+
+    .input-field select {
+        width: 100%;
+        appearance: none;
+        padding: 14px 10px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background: black;
+        color: orange;
+    }
+
+    .input-field input {
+        width: 100%;
+        appearance: none;
+        padding: 14px 10px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background: black;
+        color: white;
+    }
+
+    .input-field select:focus,
+    .input-field input:focus {
+        border: 1px solid orange;
+    }
+
+
+    .input-field select.selected {
+        color: white;
+    }
+
+    .input-field input::placeholder {
+        color: rgba(255, 166, 0, 0.397);
+    }
+
+
+
+
+    .formicons {
+        position: absolute;
+        font-size: 15px;
+        color: orange;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .login-btn {
+        width: 100%;
+        background: orange;
+        border: none;
+        padding: 11px 10px;
+        border-radius: 5px;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    .login-btn span {
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+    }
+
+    .login-footer {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .login-footer p,
+    .login-footer a {
+        font-size: 13px;
+        text-decoration: none;
+        color: white;
+    }
+
+    .login-footer a:hover {
+        color: orange;
+    }
+
+    .login-socials {
+        display: flex;
+        gap: 10px;
+        color: black;
+        align-items: center;
+        justify-content: center;
+        margin-block: 10px;
+    }
+
+    .social-icon {
+        height: 30px;
+        width: 30px;
+        background: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+</style>
+
+<body>
+    <section class="login-page">
+
+        <div class="login-top">
+            <div class="logo">
+                <img src="./src/logo.webp" alt="Company Logo">
+            </div>
+
+            <h1>Welcome Back</h1>
+
+            <p>Login To Your Account</p>
+        </div>
+
+        <form class="form">
+
+            <div class="input-box">
+
+                <label for="role">Select Role</label>
+
+                <div class="input-field">
+
+                    <select name="role" id="role">
+                        <option value="">Select Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Client">Client</option>
+                    </select>
+
+                    <span class="material-symbols-outlined formicons">supervisor_account</span>
+
+                </div>
+
+            </div>
+
+            <div class="input-box">
+
+                <label for="email">Email</label>
+
+                <div class="input-field">
+                    <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                    <span class="material-symbols-outlined formicons">mail</span>
+                </div>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label for="password">Password</label>
+
+                <div class="input-field">
+                    <input type="password" name="password" id="password" placeholder="Enter Your Password">
+                    <span class="material-symbols-outlined formicons">visibility_off</span>
+                </div>
+
+            </div>
+
+            <button class="login-btn"><span class="material-symbols-outlined">login </span>Login </button>
+
+        </form>
+
+        <div class="login-footer">
+
+            <p>or Sign Up Using</p>
+
+            <div class="login-socials">
+                <div class="social-icon errorpage"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div class="social-icon errorpage"><i class="fa-brands fa-x-twitter"></i></div>
+                <div class="social-icon errorpage"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="social-icon errorpage"><i class="fa-brands fa-youtube"></i></div>
+            </div>
+
+            <p>Don't have an account? <a href="">Sign Up</a></p>
+
+            <a href="">Forgot Password</a>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        const roleSelect = document.getElementById("role");
+
+        roleSelect.addEventListener("change", () => {
+            if (roleSelect.value === "") {
+                roleSelect.classList.remove("selected");
+            } else {
+                roleSelect.classList.add("selected");
+            }
+        });
+    </script>
+</body>
+
+</html>
