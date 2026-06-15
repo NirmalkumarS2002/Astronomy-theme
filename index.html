@@ -1,11 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astronomy - Theme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
 </head>
+
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: "Noto Sans", sans-serif;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background: black;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 190px;
+    }
+
+    .menus {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .menus ul {
+        display: flex;
+        gap: 30px;
+    }
+
+    .menus ul li {
+        list-style: none;
+    }
+
+    .menus ul li a {
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+          position: relative;
+    }
+
+     .menus ul li a::after{
+        content: "";
+        background: orange;
+        height: 2px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        bottom: -5px;
+         transition: 0.3s ease;
+     }
+
+     .menus ul li a:hover::after{
+           width: 100%;
+        
+     }
+
+
+    .menu-btn,
+    .close-btn {
+        display: none;
+    }
+
+    .nav-btn {
+        padding: 10px 30px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        background: orange;
+    }
+
+    @media (max-width:780px) {
+
+        .menus {
+            display: none;
+        }
+
+        .logo img {
+            width: 160px;
+        }
+
+        .menu-btn {
+            display: flex;
+            color: white;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .close-btn {
+            display: none;
+            color: white;
+            align-items: center;
+            cursor: pointer; 
+        }
+
+
+
+    }
+</style>
+
 <body>
-    
+
+    <section class="header">
+
+        <div class="logo">
+            <img src="./src/logo.webp" alt="company Logo">
+        </div>
+
+        <nav class="menus">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Pages</a></li>
+                <li><a href="">Events</a></li>
+                <li><a href="">Blog</a></li>
+            </ul>
+
+            <button class="nav-btn">Login</button>
+        </nav>
+
+        <div class="menu-btn">
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+
+        <div class="close-btn">
+            <span class="material-symbols-outlined">close</span>
+        </div>
+
+    </section>
+
 </body>
+
 </html>
