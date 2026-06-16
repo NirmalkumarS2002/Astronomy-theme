@@ -10,24 +10,24 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
-
     <link
-        href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Space+Grotesk:wght@300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900&display=swap"
         rel="stylesheet">
-
 
     <style>
         * {
             padding: 0px;
             margin: 0px;
             box-sizing: border-box;
-
         }
 
         body {
             overflow-x: hidden;
+            background: #000;
+            font-family: "Noto Sans", sans-serif;
         }
 
+        /* ── HEADER ── */
         .header {
             display: flex;
             justify-content: space-between;
@@ -92,9 +92,7 @@
 
         .menus ul li a:hover::after {
             width: 100%;
-
         }
-
 
         .menu-btn,
         .close-btn {
@@ -108,19 +106,14 @@
             border-radius: 10px;
             border: none;
             cursor: pointer;
-
             background: linear-gradient(135deg, #eeb03c, #ff9800);
             color: #000;
-
             transition: all 0.35s ease;
         }
 
         .nav-btn:hover {
             transform: translateY(-3px) scale(1.03);
-
-            box-shadow:
-                0 12px 30px rgba(255, 166, 0, 0.4);
-
+            box-shadow: 0 12px 30px rgba(255, 166, 0, 0.4);
             filter: brightness(1.08);
         }
 
@@ -129,7 +122,6 @@
         }
 
         @media (max-width:780px) {
-
             .menus {
                 display: none;
                 position: absolute;
@@ -168,7 +160,558 @@
             }
         }
 
+        /* ════════════════════════════════════
+           SECTION 1 — HERO / ABOUT BANNER
+        ════════════════════════════════════ */
+        .about-hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
 
+        .about-hero img.hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.75) 100%);
+            z-index: 1;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            max-width: 850px;
+        }
+
+        .about-hero-content .eyebrow {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 13px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: orange;
+            margin-bottom: 20px;
+        }
+
+        .about-hero-content h1 {
+            font-family: "Chelsea Market", cursive;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.1;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+
+        .about-hero-content h1 span {
+            color: orange;
+        }
+
+        .about-hero-content p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 680px;
+            margin: 0 auto 36px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 14px 38px;
+            background: linear-gradient(135deg, #eeb03c, #ff9800);
+            color: #000;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 152, 0, 0.45);
+        }
+
+        /* ════════════════════════════════════
+           SECTION 2 — OUR STORY / MISSION
+        ════════════════════════════════════ */
+        .mission-section {
+            background: #040c14;
+            padding: 100px 60px;
+        }
+
+        .mission-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .mission-img-wrap {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .mission-img-wrap img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .mission-img-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 152, 0, 0.25);
+            pointer-events: none;
+        }
+
+        .mission-badge {
+            position: absolute;
+            bottom: 28px;
+            left: 28px;
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 152, 0, 0.4);
+            border-radius: 12px;
+            padding: 16px 22px;
+            color: white;
+        }
+
+        .mission-badge span {
+            display: block;
+            font-size: 32px;
+            font-weight: 800;
+            color: orange;
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .mission-badge p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 2px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: orange;
+            font-family: "Space Grotesk", sans-serif;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-family: "Chelsea Market", cursive;
+            font-size: clamp(1.9rem, 3.5vw, 3rem);
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 22px;
+        }
+
+        .section-title span {
+            color: orange;
+        }
+
+        .section-body {
+            font-size: 17px;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .divider-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, orange, transparent);
+            margin-bottom: 28px;
+        }
+
+        @media (max-width: 900px) {
+            .mission-section {
+                padding: 70px 24px;
+            }
+
+            .mission-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .mission-img-wrap img {
+                height: 320px;
+            }
+        }
+
+        /* ════════════════════════════════════
+           SECTION 3 — STATS / NUMBERS
+        ════════════════════════════════════ */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(5, 10, 25, 0.93)),
+                url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1600&q=80') center/cover no-repeat fixed;
+            padding: 90px 60px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 152, 0, 0.2);
+            border-radius: 16px;
+            padding: 42px 24px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 152, 0, 0.55);
+        }
+
+        .stat-icon {
+            font-size: 36px;
+            color: orange;
+            margin-bottom: 16px;
+        }
+
+        .stat-num {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.55);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 860px) {
+            .stats-section {
+                padding: 70px 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ════════════════════════════════════
+           SECTION 4 — TEAM
+        ════════════════════════════════════ */
+        .team-section {
+            background: #040c14;
+            padding: 100px 60px;
+            text-align: center;
+        }
+
+        .section-head {
+            max-width: 650px;
+            margin: 0 auto 60px;
+        }
+
+        .team-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 152, 0, 0.4);
+        }
+
+        .team-card-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+
+        .team-card-body {
+            padding: 22px 20px 24px;
+        }
+
+        .team-card-body h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .team-card-body .role {
+            font-size: 13px;
+            color: orange;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .team-card-body p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .team-socials {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .team-socials a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .team-socials a:hover {
+            background: orange;
+            color: #000;
+        }
+
+        @media (max-width: 780px) {
+            .team-section {
+                padding: 70px 24px;
+            }
+        }
+
+        /* ════════════════════════════════════
+           SECTION 5 — TELESCOPE / GALLERY
+        ════════════════════════════════════ */
+        .gallery-section {
+            background: #000;
+            padding: 100px 60px;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            cursor: pointer;
+        }
+
+        .gallery-item.tall {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            min-height: 220px;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item.tall img {
+            min-height: 460px;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            color: white;
+            font-size: 15px;
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 600;
+        }
+
+        @media (max-width: 860px) {
+            .gallery-section {
+                padding: 70px 24px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-item.tall {
+                grid-row: span 1;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ════════════════════════════════════
+           SECTION 6 — TESTIMONIALS
+        ════════════════════════════════════ */
+        .testimonial-section {
+            background: linear-gradient(135deg, #070f1c 0%, #0a0a0a 100%);
+            padding: 100px 60px;
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 36px 30px;
+            text-align: left;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(255, 152, 0, 0.35);
+            transform: translateY(-5px);
+        }
+
+        .quote-mark {
+            font-size: 56px;
+            color: rgba(255, 152, 0, 0.25);
+            font-family: "Chelsea Market", cursive;
+            line-height: 0.8;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .testimonial-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.72);
+            margin-bottom: 28px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-author img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 2px solid orange;
+        }
+
+        .author-info h4 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .author-info span {
+            font-size: 13px;
+            color: orange;
+        }
+
+        .star-row {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 16px;
+        }
+
+        .star-row i {
+            color: orange;
+            font-size: 14px;
+        }
+
+        @media (max-width: 780px) {
+            .testimonial-section {
+                padding: 70px 24px;
+            }
+        }
+
+
+      
         /* Footer */
 
         .footer {
@@ -207,7 +750,7 @@
         .footer-link a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .footer-link a:hover {
@@ -219,12 +762,12 @@
         .footer-box:first-child p {
             max-width: 300px;
             text-align: justify;
-            font-size: 18px;
-            line-height: 1.5;
+            font-size: 16px;
+            line-height: 1.9;
         }
 
         .footer-box:last-child p {
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .login-socials {
@@ -253,25 +796,26 @@
 
         .footer-email {
             background: transparent;
-            border: 1px solid orange;
+            border: 1px solid rgba(255, 165, 0, 0.3);
             font-size: 14px;
-            padding: 10px 20px;
+            padding: 15px 20px;
             width: 100%;
-            border-radius: 6px;
+            border-radius: 10px;
             color: white;
         }
 
         .footer-btn {
             font-size: 14px;
-            padding: 10px 20px;
+            padding: 15px 20px;
             width: 100%;
             border: none;
-            border-radius: 6px;
+            font-weight: bold;
+            border-radius: 10px;
             background: linear-gradient(135deg, #eeb03c, #ff9800);
         }
 
         .footer-btn:hover {
-            box-shadow:0 7px 30px rgba(255, 166, 0, 0.4);
+            box-shadow: 0 7px 30px rgba(255, 166, 0, 0.4);
             filter: brightness(1.08);
         }
 
@@ -285,13 +829,13 @@
         }
 
         .footer-footer p {
-            font-size: 17px;
+            font-size: 15   px;
         }
 
         .policy a {
             color: rgba(255, 255, 255, 0.527);
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             margin-left: 40px;
         }
 
@@ -335,14 +879,44 @@
                 margin-inline: 15px;
             }
         }
+
+        /* ── SCROLL REVEAL ANIMATION ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
     </style>
+</head>
 
 <body>
 
+    <!-- ── HEADER ── -->
     <section class="header">
-
         <div class="logo">
-            <img src="./src/logo.webp" alt="company Logo">
+            <img src="./src/logo.webp" alt="Astronomy Logo"
+                style="filter:invert(1) sepia(1) saturate(5) hue-rotate(5deg);">
         </div>
 
         <nav class="menus">
@@ -353,143 +927,381 @@
                 <li><a href="events.html">Events</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
-
             <button class="nav-btn">Login</button>
         </nav>
 
         <div class="menu-btn">
             <span class="material-symbols-outlined">menu</span>
         </div>
-
         <div class="close-btn">
             <span class="material-symbols-outlined">close</span>
         </div>
-
     </section>
 
-    <section class="footer">
 
+    <!-- ════════════════════════════════════
+         SECTION 1 — HERO BANNER
+    ════════════════════════════════════ -->
+    <section class="about-hero">
+        <img class="hero-bg" src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=1600&q=80"
+            alt="Deep Space Hero">
+        <div class="hero-overlay"></div>
+        <div class="about-hero-content">
+            <p class="eyebrow">Who We Are</p>
+            <h1>Exploring the <span>Infinite</span><br>Universe</h1>
+            <p>We are a team of astronomers, engineers, and visionaries dedicated to unlocking the mysteries of the
+                cosmos — from our nearest planetary neighbors to the farthest galaxies ever observed.</p>
+            <a href="#mission" class="hero-cta">Discover Our Story</a>
+        </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         SECTION 2 — MISSION / STORY
+    ════════════════════════════════════ -->
+    <section class="mission-section" id="mission">
+        <div class="mission-inner">
+            <div class="mission-img-wrap reveal">
+                <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=900&q=80"
+                    alt="Telescope at night">
+                <div class="mission-badge">
+                    <span>25+</span>
+                    <p>Years of Cosmic Research</p>
+                </div>
+            </div>
+            <div class="mission-text reveal reveal-delay-1">
+                <p class="section-label">Our Mission</p>
+                <h2 class="section-title">Driven by Curiosity,<br>Guided by <span>Science</span></h2>
+                <div class="divider-line"></div>
+                <p class="section-body">Founded in 2000, our institute has been at the forefront of deep-sky observation
+                    and planetary science. We operate six world-class telescopes across three continents, giving us an
+                    unbroken view of the sky around the clock.</p>
+                <p class="section-body">Our mission is simple: push the boundaries of human knowledge by studying
+                    everything from exoplanet atmospheres to black hole dynamics — and share those discoveries with the
+                    world.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         SECTION 3 — STATS
+    ════════════════════════════════════ -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <div class="stat-icon"><i class="fa-solid fa-satellite"></i></div>
+                <div class="stat-num">120+</div>
+                <div class="stat-label">Missions Launched</div>
+            </div>
+            <div class="stat-card reveal reveal-delay-1">
+                <div class="stat-icon"><i class="fa-solid fa-meteor"></i></div>
+                <div class="stat-num">4,300</div>
+                <div class="stat-label">Exoplanets Catalogued</div>
+            </div>
+            <div class="stat-card reveal reveal-delay-2">
+                <div class="stat-icon"><i class="fa-solid fa-telescope"
+                        style="font-family:'Font Awesome 6 Free'; font-weight:900"></i><i
+                        class="fa-solid fa-binoculars"></i></div>
+                <div class="stat-num">6</div>
+                <div class="stat-label">Global Observatories</div>
+            </div>
+            <div class="stat-card reveal reveal-delay-3">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-num">850K</div>
+                <div class="stat-label">Community Members</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         SECTION 4 — TEAM
+    ════════════════════════════════════ -->
+    <section class="team-section">
+        <div class="section-head reveal">
+            <p class="section-label">The Minds Behind the Mission</p>
+            <h2 class="section-title">Meet Our <span>Expert</span> Team</h2>
+            <p class="section-body">World-class scientists and engineers united by a single obsession — understanding
+                the universe.</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card reveal">
+                <img class="team-card-img" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=500&q=80"
+                    alt="Dr. Marcus Chen">
+                <div class="team-card-body">
+                    <h3>Dr. Marcus Chen</h3>
+                    <p class="role">Chief Astrophysicist</p>
+                    <p>Leads our black-hole research division with 18 years of observational expertise from NASA and
+                        ESO.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card reveal reveal-delay-1">
+                <img class="team-card-img" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&q=80"
+                    alt="Dr. Priya Nair">
+                <div class="team-card-body">
+                    <h3>Dr. Priya Nair</h3>
+                    <p class="role">Exoplanet Researcher</p>
+                    <p>Discovered two potentially habitable exoplanets using our transit photometry pipeline built
+                        in-house.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card reveal reveal-delay-2">
+                <img class="team-card-img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&q=80"
+                    alt="Arjun Mehta">
+                <div class="team-card-body">
+                    <h3>Arjun Mehta</h3>
+                    <p class="role">Space Systems Engineer</p>
+                    <p>Designed the thermal control systems deployed aboard our CubeSat constellation orbiting at 600
+                        km.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card reveal reveal-delay-3">
+                <img class="team-card-img" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80"
+                    alt="Dr. Sofia Reyes">
+                <div class="team-card-body">
+                    <h3>Dr. Sofia Reyes</h3>
+                    <p class="role">Cosmology Lead</p>
+                    <p>Studies the large-scale structure of the universe; her CMB analysis work has been cited 3,000+
+                        times.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         SECTION 5 — GALLERY
+    ════════════════════════════════════ -->
+    <section class="gallery-section">
+        <div class="section-head reveal" style="margin-bottom:50px">
+            <p class="section-label">Through Our Lenses</p>
+            <h2 class="section-title">A Window into the <span>Cosmos</span></h2>
+            <p class="section-body">Every image captured by our telescopes is a moment frozen in cosmic time — light
+                that has travelled millions of years to reach us.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item tall reveal">
+                <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=700&q=80" alt="Nebula">
+                <div class="gallery-overlay"><span>Eagle Nebula</span></div>
+            </div>
+            <div class="gallery-item reveal reveal-delay-1">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=80"
+                    alt="Earth from Space">
+                <div class="gallery-overlay"><span>Earth From Orbit</span></div>
+            </div>
+            <div class="gallery-item reveal reveal-delay-2">
+                <img src="https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=700&q=80" alt="Milky Way">
+                <div class="gallery-overlay"><span>Milky Way Core</span></div>
+            </div>
+            <div class="gallery-item reveal reveal-delay-1">
+                <img src="https://images.unsplash.com/photo-1614314107768-6018061b5b72?w=700&q=80" alt="Moon Surface">
+                <div class="gallery-overlay"><span>Lunar Surface</span></div>
+            </div>
+            <div class="gallery-item reveal reveal-delay-2">
+                <img src="https://images.unsplash.com/photo-1608178398319-48f814d0750c?w=700&q=80" alt="Saturn">
+                <div class="gallery-overlay"><span>Saturn's Rings</span></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         SECTION 6 — TESTIMONIALS  (bonus)
+    ════════════════════════════════════ -->
+    <section class="testimonial-section">
+        <div class="section-head reveal" style="margin-bottom:50px">
+            <p class="section-label">Voices From the Community</p>
+            <h2 class="section-title">What Our <span>Members</span> Say</h2>
+        </div>
+
+        <div class="testimonial-grid">
+            <div class="testimonial-card reveal">
+                <span class="quote-mark">"</span>
+                <div class="star-row">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>Joining this community changed how I see the night sky. The live observation sessions with actual
+                    astronomers are unlike anything I have experienced before.</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80" alt="Ravi K">
+                    <div class="author-info">
+                        <h4>Ravi Krishnamurthy</h4>
+                        <span>Amateur Astronomer, Chennai</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal reveal-delay-1">
+                <span class="quote-mark">"</span>
+                <div class="star-row">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>The research access and mentorship programme opened doors I never imagined. I published my first
+                    paper on asteroid spectroscopy within a year of joining.</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Emily J">
+                    <div class="author-info">
+                        <h4>Emily Johansson</h4>
+                        <span>Graduate Researcher, Stockholm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal reveal-delay-2">
+                <span class="quote-mark">"</span>
+                <div class="star-row">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p>The image archive alone is worth the membership. High-resolution telescope feeds updated in real time
+                    — I use them every week for my university lectures.</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+                        alt="Prof. James">
+                    <div class="author-info">
+                        <h4>Prof. James Okafor</h4>
+                        <span>Physics Lecturer, Lagos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ── FOOTER ── -->
+    <section class="footer">
         <div class="footer-main">
             <div class="footer-box">
-
-                <a href=""><img src="./src/logo.webp" alt="company logo"></a>
-
-                <p>We Explore the universe with advanced
-                    technology, driving innovation and
-                    discovery to benefit all humanity.</p>
-
+                <a href=""><img src="./src/logo.webp" alt="company logo"
+                        style="filter:invert(1) sepia(1) saturate(5) hue-rotate(5deg); width:140px;"></a>
+                <p>We Explore the universe with advanced technology, driving innovation and discovery to benefit all
+                    humanity.</p>
                 <div class="login-socials">
-                    <div class="social-icon errorpage"><i class="fa-brands fa-linkedin-in"></i></div>
-                    <div class="social-icon errorpage"><i class="fa-brands fa-x-twitter"></i></div>
-                    <div class="social-icon errorpage"><i class="fa-brands fa-facebook-f"></i></div>
-                    <div class="social-icon errorpage"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="social-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="social-icon"><i class="fa-brands fa-x-twitter"></i></div>
+                    <div class="social-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
                 </div>
-
             </div>
 
             <div class="footer-box">
-
                 <h2>Company</h2>
-
                 <div class="footer-link">
                     <a href="">About</a>
                     <a href="">Pages</a>
                     <a href="">Event</a>
                     <a href="">Blog</a>
                 </div>
-
             </div>
 
             <div class="footer-box">
-
                 <h2>Address</h2>
-
                 <div class="footer-link">
                     <a href="">space@gmail.com</a>
-                    <a href="">Chennai,India</a>
+                    <a href="">Chennai, India</a>
                     <a href="">+91 1234567890</a>
                 </div>
-
             </div>
 
             <div class="footer-box">
-
                 <h2>Newsletter</h2>
-
                 <div class="footer-link">
-
                     <p>Stay Informed with Stackly</p>
                     <input type="email" class="footer-email" placeholder="Please Subscribe">
                     <button class="footer-btn">Subscribe</button>
-
-
                 </div>
-
             </div>
-
         </div>
+
         <hr class="footer-line">
+
         <div class="footer-footer">
             <p>@ 2026 Your Stackly. All Rights Reserved</p>
-
             <div class="policy">
                 <a href="">Privacy Policy</a>
                 <a href="">Terms of Use</a>
             </div>
-
         </div>
-
     </section>
 
+
     <script>
-
-        //hand burgar menu
-
-        let menubtn = document.querySelector(".menu-btn")
-        let menus = document.querySelector(".menus")
-        let closebtn = document.querySelector(".close-btn")
+        /* ── Hamburger Menu ── */
+        const menubtn = document.querySelector(".menu-btn");
+        const menus = document.querySelector(".menus");
+        const closebtn = document.querySelector(".close-btn");
 
         menubtn.addEventListener("click", () => {
-            menubtn.style.display = "none"
-            closebtn.style.display = "block"
-            menus.style.display = "flex"
-        })
+            menubtn.style.display = "none";
+            closebtn.style.display = "block";
+            menus.style.display = "flex";
+        });
 
         closebtn.addEventListener("click", () => {
-            menubtn.style.display = "block"
-            closebtn.style.display = "none"
-            menus.style.display = "none"
-        })
+            menubtn.style.display = "block";
+            closebtn.style.display = "none";
+            menus.style.display = "none";
+        });
 
         window.addEventListener("resize", () => {
             if (window.innerWidth > 780) {
-                menubtn.style.display = "none"
-                closebtn.style.display = "none"
-                menus.style.display = "flex"
+                menubtn.style.display = "none";
+                closebtn.style.display = "none";
+                menus.style.display = "flex";
+            } else {
+                menubtn.style.display = "block";
+                closebtn.style.display = "none";
+                menus.style.display = "none";
             }
-            else {
-                menubtn.style.display = "block"
-                closebtn.style.display = "none"
-                menus.style.display = "none"
-            }
+        });
 
-        })
-
-        // nav bar scroll 
-
-        let navbar = document.querySelector(".header")
-
+        /* ── Navbar Scroll ── */
+        const navbar = document.querySelector(".header");
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add("scrolled")
-            }
-            else {
-                navbar.classList.remove("scrolled")
-            }
-        })
+            navbar.classList.toggle("scrolled", window.scrollY > 50);
+        });
 
+        /* ── Scroll Reveal ── */
+        const reveals = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        reveals.forEach(el => observer.observe(el));
     </script>
 </body>
-
 
 </html>

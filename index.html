@@ -26,6 +26,7 @@
 
         body {
             overflow-x: hidden;
+             font-family: "Noto Sans", sans-serif;
         }
 
         .header {
@@ -227,10 +228,14 @@
         .hero-main h1 {
             font-size: clamp(35px, 5vw, 70px);
             text-align: center;
-       font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: "Chelsea Market", cursive;
             text-transform: uppercase;
             line-height: 1.2;
             margin-bottom: 20px
+        }
+
+        .hero-main h1 span {
+            color: orange;
         }
 
         .hero-para {
@@ -278,6 +283,7 @@
 
         .hero-footer h2 {
             font-size: 25px;
+
         }
 
         @media (max-width:900px) {
@@ -308,7 +314,7 @@
             margin-bottom: 48px
         }
 
-        .sec-title span {
+        .sec-title >span {
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 5px;
@@ -319,10 +325,16 @@
 
         .sec-title h2 {
             font-size: clamp(28px, 4vw, 48px);
+            font-family: "Chelsea Market", cursive;
             font-weight: 700;
             text-transform: uppercase;
             line-height: 1.2;
             color: white;
+        }
+
+        .sec-title h2 span {
+            color: orange;
+
         }
 
         .sec-title p {
@@ -547,11 +559,11 @@
         /* 5. Facts Counter */
         .facts-sec {
             padding: 80px 40px;
-          background: linear-gradient(135deg, #0a050098, #05080aa6),url("./src/section-bg.webp");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-attachment: fixed;
+            background: linear-gradient(135deg, #0a050098, #05080aa6), url("./src/section-bg.webp");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         .facts-grid {
@@ -605,6 +617,7 @@
             line-height: 1.15;
             margin-bottom: 20px;
             color: white;
+             font-family: "Chelsea Market", cursive;
         }
 
         .cta-inner .big span {
@@ -732,7 +745,7 @@
         .footer-link a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .footer-link a:hover {
@@ -744,12 +757,12 @@
         .footer-box:first-child p {
             max-width: 300px;
             text-align: justify;
-            font-size: 18px;
-            line-height: 1.5;
+            font-size: 16px;
+            line-height: 1.9;
         }
 
         .footer-box:last-child p {
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .login-socials {
@@ -811,13 +824,13 @@
         }
 
         .footer-footer p {
-            font-size: 17px;
+            font-size: 15   px;
         }
 
         .policy a {
             color: rgba(255, 255, 255, 0.527);
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             margin-left: 40px;
         }
 
@@ -861,6 +874,8 @@
                 margin-inline: 15px;
             }
         }
+
+        /**/
 
         .space-slider-section {
             padding: 100px 20px;
@@ -1000,7 +1015,7 @@
 
         <div class="hero-main">
             <p>Active Mission</p>
-            <h1>Humanity's <br> Journey Into <br> space</h1>
+            <h1>Humanity's <br> <span>Journey Into </span> <br> space</h1>
 
             <p class="hero-para">We Are Dedicated to advancing Humanity by expoloring the
                 cosmos through groundbreaking speace missions, culting
@@ -1033,7 +1048,7 @@
 
         <div class="sec-title">
             <span>Our Solar System</span>
-            <h2>Planets of the<br>Milky Way</h2>
+            <h2>Planets of the<br> <span>Milky Way</span></h2>
             <p>From the scorching Mercury to the icy Neptune — explore every planet in our cosmic neighborhood.</p>
         </div>
 
@@ -1089,7 +1104,7 @@
     <section class="missions">
         <div class="sec-title">
             <span>Historic Achievements</span>
-            <h2>Legendary Space<br>Missions</h2>
+            <h2>Legendary Space<br><span>Missions</span></h2>
             <p>Milestones that defined humanity's quest to conquer the cosmos.</p>
         </div>
         <div class="missions-list">
@@ -1149,7 +1164,7 @@
 
         <div class="sec-title">
             <span>Visual Universe</span>
-            <h2>Cosmos Gallery</h2>
+            <h2>Cosmos <span>Gallery</span></h2>
             <p>Breathtaking wonders captured from the depths of space.</p>
         </div>
 
@@ -1225,7 +1240,7 @@
     <section class="facts-sec">
         <div class="sec-title">
             <span>By The Numbers</span>
-            <h2>Universe at a Glance</h2>
+            <h2>Universe at a <span>Glance</span></h2>
             <p>Mind-bending numbers that reveal the true scale of our cosmos.</p>
         </div>
         <div class="facts-grid">
