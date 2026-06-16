@@ -32,12 +32,18 @@
             display: flex;
             justify-content: space-between;
             padding: 10px 20px;
-            background: black;
+            background: transparent;
             align-items: center;
             position: fixed;
             width: 100%;
             font-family: "Noto Sans", sans-serif;
             z-index: 99999;
+            transition: 0.2s ease;
+        }
+
+        .header.scrolled {
+            background: black;
+            box-shadow: 2px 2px 10px rgb(20, 20, 20);
         }
 
         .logo {
@@ -121,8 +127,6 @@
                 gap: 30px;
             }
 
-            
-
             .menus ul {
                 flex-direction: column;
             }
@@ -150,10 +154,6 @@
         /* hero seciton*/
 
         .hero-section {
-            /* background: url("./src/homebg.webp");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;*/
             position: relative;
             overflow: hidden;
             height: 140vh;
@@ -228,7 +228,7 @@
             max-width: 700px;
             line-height: 1.9;
             margin-bottom: 100px;
-            font-size: 16px;
+            font-size: 18px;
             word-spacing: 2px;
         }
 
@@ -263,6 +263,7 @@
             word-spacing: 5px;
             letter-spacing: 5px;
             line-height: 1.5;
+            color: orange;
         }
 
         .hero-footer h2 {
@@ -290,6 +291,170 @@
                 font-size: 13px;
             }
 
+        }
+
+
+        /* Footer */
+
+        .footer {
+            width: 100%;
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.801)), url(./src/footer-bg.webp);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            color: white;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            padding: 50px;
+            gap: 40px;
+        }
+
+        .footer-box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-box h2 {
+            font-size: 30px;
+        }
+
+        .footer-link {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+
+        .footer-link a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .footer-link a:hover {
+            color: orange;
+        }
+
+
+
+        .footer-box:first-child p {
+            max-width: 300px;
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .footer-box:last-child p {
+            font-size: 18px;
+        }
+
+        .login-socials {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(128, 128, 128, 0.308);
+            backdrop-filter: blur(10px);
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: 0.5s ease;
+        }
+
+        .social-icon:hover {
+            background: orange;
+            color: black;
+            transform: translateY(-4px);
+        }
+
+        .footer-email {
+            background: transparent;
+            border: 1px solid orange;
+            font-size: 14px;
+            padding: 10px 20px;
+            width: 100%;
+            border-radius: 6px;
+            color: white;
+        }
+
+        .footer-btn {
+            font-size: 14px;
+            padding: 10px 20px;
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            background: orange;
+
+        }
+
+
+        .footer-footer {
+            display: flex;
+            justify-content: space-around;
+            padding-block: 40px;
+            color: rgba(255, 255, 255, 0.527);
+            ;
+        }
+
+        .footer-footer p {
+            font-size: 17px;
+        }
+
+        .policy a {
+            color: rgba(255, 255, 255, 0.527);
+            text-decoration: none;
+            font-size: 18px;
+            margin-left: 40px;
+        }
+
+        .policy a:hover {
+            color: orange;
+        }
+
+        .footer-line {
+            margin-inline: 30px;
+            opacity: 0.5;
+        }
+
+        @media (max-width:550px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                justify-content: center;
+            }
+
+            .footer-box:first-child p {
+                text-align: center;
+            }
+
+            .footer-box {
+                align-items: center;
+            }
+
+        }
+
+        @media (max-width:650px) {
+            .footer-footer {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .policy {
+                justify-content: space-around;
+            }
+
+            .policy a {
+                margin-inline: 15px;
+            }
         }
     </style>
 
@@ -359,7 +524,84 @@
 
     </section>
 
+    <section class="footer">
+
+        <div class="footer-main">
+            <div class="footer-box">
+
+                <a href=""><img src="./src/logo.webp" alt="company logo"></a>
+
+                <p>We Explore the universe with advanced
+                    technology, driving innovation and
+                    discovery to benefit all humanity.</p>
+
+                <div class="login-socials">
+                    <div class="social-icon errorpage"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="social-icon errorpage"><i class="fa-brands fa-x-twitter"></i></div>
+                    <div class="social-icon errorpage"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="social-icon errorpage"><i class="fa-brands fa-youtube"></i></div>
+                </div>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h2>Company</h2>
+
+                <div class="footer-link">
+                    <a href="">About</a>
+                    <a href="">Pages</a>
+                    <a href="">Event</a>
+                    <a href="">Blog</a>
+                </div>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h2>Address</h2>
+
+                <div class="footer-link">
+                    <a href="">space@gmail.com</a>
+                    <a href="">Chennai,India</a>
+                    <a href="">+91 1234567890</a>
+                </div>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h2>Newsletter</h2>
+
+                <div class="footer-link">
+
+                    <p>Stay Informed with Stackly</p>
+                    <input type="email" class="footer-email" placeholder="Please Subscribe">
+                    <button class="footer-btn">Subscribe</button>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <hr class="footer-line">
+        <div class="footer-footer">
+            <p>@ 2026 Your Stackly. All Rights Reserved</p>
+
+            <div class="policy">
+                <a href="">Privacy Policy</a>
+                <a href="">Terms of Use</a>
+            </div>
+
+        </div>
+
+    </section>
+
     <script>
+
+        //hand burgar menu
+
         let menubtn = document.querySelector(".menu-btn")
         let menus = document.querySelector(".menus")
         let closebtn = document.querySelector(".close-btn")
@@ -388,6 +630,19 @@
                 menus.style.display = "none"
             }
 
+        })
+
+        // nav bar scroll 
+
+        let navbar = document.querySelector(".header")
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled")
+            }
+            else {
+                navbar.classList.remove("scrolled")
+            }
         })
 
     </script>
