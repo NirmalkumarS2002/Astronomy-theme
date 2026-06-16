@@ -104,10 +104,28 @@
         .nav-btn {
             padding: 10px 30px;
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 600;
             border-radius: 10px;
             border: none;
-            background: orange;
+            cursor: pointer;
+
+            background: linear-gradient(135deg, #eeb03c, #ff9800);
+            color: #000;
+
+            transition: all 0.35s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+
+            box-shadow:
+                0 12px 30px rgba(255, 166, 0, 0.4);
+
+            filter: brightness(1.08);
+        }
+
+        .nav-btn:active {
+            transform: translateY(0);
         }
 
         @media (max-width:780px) {
@@ -293,6 +311,436 @@
 
         }
 
+        .sec-title {
+            text-align: center;
+            margin-bottom: 48px
+        }
+
+        .sec-title span {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: orange;
+            display: block;
+            margin-bottom: 10px
+        }
+
+        .sec-title h2 {
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.2;
+            color: white;
+        }
+
+        .sec-title p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 14px auto 0;
+            line-height: 1.8
+        }
+
+        /*soloar*/
+        .solar {
+            padding: 80px 40px;
+            background: linear-gradient(180deg, #000 0%, #0a0a1a 100%);
+        }
+
+        .planets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .planet-card {
+            height: 280px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            transition: all .4s ease;
+            border: 1px solid rgba(255, 165, 0, .15);
+        }
+
+        .planet-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, .95) 10%,
+                    rgba(0, 0, 0, .45) 55%,
+                    transparent 100%);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .overlay h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .overlay p {
+            color: rgba(255, 255, 255, .8);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .planet-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: orange;
+            box-shadow: 0 20px 40px rgba(255, 165, 0, .25);
+        }
+
+        /* 2. Space Missions */
+        .missions {
+            padding: 80px 40px;
+            background: #040410;
+        }
+
+        .missions-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .mission-card {
+            display: flex;
+            gap: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 24px;
+            transition: 0.3s;
+        }
+
+        .mission-card:hover {
+            border-color: orange;
+            background: rgba(255, 165, 0, 0.05);
+        }
+
+        .mission-num {
+            font-size: 36px;
+            font-weight: 800;
+            color: orange;
+            opacity: 0.6;
+            min-width: 50px;
+            line-height: 1;
+        }
+
+        .mission-info h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .mission-info p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.7;
+        }
+
+        .mission-badge {
+            display: inline-block;
+            font-size: 10px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+            background: rgba(255, 165, 0, 0.15);
+            color: orange;
+            border: 1px solid rgba(255, 165, 0, 0.3)
+        }
+
+        /* 3. Star Types */
+        .stars-sec {
+            padding: 80px 40px;
+            background: linear-gradient(180deg, #040410, #000)
+        }
+
+        .stars-row {
+            display: flex;
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            flex-wrap: wrap
+        }
+
+        .star-type {
+            flex: 1;
+            min-width: 140px;
+            padding: 30px 18px;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            transition: 0.3s;
+            cursor: pointer
+        }
+
+        .star-type:last-child {
+            border-right: none
+        }
+
+        .star-type:hover {
+            background: rgba(255, 165, 0, 0.07)
+        }
+
+        .star-dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px
+        }
+
+        .star-type h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: white;
+        }
+
+        .star-type p {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.6
+        }
+
+        /* 4. Gallery */
+        .gallery-sec {
+            padding: 80px 40px;
+            background: #000
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            max-width: 1100px;
+            margin: 0 auto
+        }
+
+        .gallery-card {
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/3;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: 0.3s;
+            cursor: pointer
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.03);
+            border-color: orange
+        }
+
+        .gallery-card .g-bg {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+            padding: 20px 16px 14px;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: 0.3s
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .gallery-overlay h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: white;
+        }
+
+        .gallery-overlay p {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6)
+        }
+
+        /* 5. Facts Counter */
+        .facts-sec {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #0a0500, #05080a)
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 28px;
+            max-width: 900px;
+            margin: 0 auto
+        }
+
+        .fact-box {
+            text-align: center;
+            padding: 36px 20px;
+            border: 1px solid rgba(255, 165, 0, 0.15);
+            border-radius: 16px;
+            background: rgba(255, 165, 0, 0.03)
+        }
+
+        .fact-num {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            color: orange;
+            line-height: 1;
+            margin-bottom: 10px
+        }
+
+        .fact-label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.6
+        }
+
+        /* 6. Newsletter / CTA */
+        .cta-sec {
+            padding: 80px 40px;
+            background: radial-gradient(ellipse at center, #1a0d00 0%, #000 70%);
+            text-align: center
+        }
+
+        .cta-inner {
+            max-width: 600px;
+            margin: 0 auto
+        }
+
+        .cta-inner .big {
+            font-size: clamp(30px, 5vw, 56px);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .cta-inner .big span {
+            color: orange
+        }
+
+        .cta-inner p {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 16px;
+            margin-bottom: 36px;
+            line-height: 1.8
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 12px;
+            max-width: 480px;
+            margin: 0 auto;
+            flex-wrap: wrap
+        }
+
+        .cta-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            outline: none
+        }
+
+        .cta-form input::placeholder {
+            color: rgba(255, 255, 255, 0.35)
+        }
+
+        .cta-btn {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #eeb03c, #ff9800);
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #000;
+            cursor: pointer;
+            transition: 0.3s;
+            white-space: nowrap
+        }
+
+        .cta-btn:hover {
+            filter: brightness(1.12);
+            transform: translateY(-2px)
+        }
+
+        @media(max-width:600px) {
+
+            .solar,
+            .missions,
+            .stars-sec,
+            .gallery-sec,
+            .facts-sec,
+            .cta-sec {
+                padding: 60px 20px
+            }
+
+            .stars-row {
+                flex-direction: column
+            }
+
+            .star-type {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06)
+            }
+
+            .star-type:last-child {
+                border-bottom: none
+            }
+
+            .cta-form {
+                flex-direction: column
+            }
+
+            .cta-form input,
+            .cta-btn {
+                width: 100%
+            }
+        }
+
 
         /* Footer */
 
@@ -392,8 +840,12 @@
             width: 100%;
             border: none;
             border-radius: 6px;
-            background: orange;
+            background: linear-gradient(135deg, #eeb03c, #ff9800);
+        }
 
+        .footer-btn:hover {
+            box-shadow: 0 7px 30px rgba(255, 166, 0, 0.4);
+            filter: brightness(1.08);
         }
 
 
@@ -468,11 +920,11 @@
 
         <nav class="menus">
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Pages</a></li>
-                <li><a href="">Events</a></li>
-                <li><a href="">Blog</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="pages.html">Pages</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="blog.html">Blog</a></li>
             </ul>
 
             <button class="nav-btn">Login</button>
@@ -523,6 +975,258 @@
         </div>
 
     </section>
+
+
+    <!-- 1. Solar System Planets -->
+    <section class="solar">
+
+        <div class="sec-title">
+            <span>Our Solar System</span>
+            <h2>Planets of the<br>Milky Way</h2>
+            <p>From the scorching Mercury to the icy Neptune — explore every planet in our cosmic neighborhood.</p>
+        </div>
+
+        <div class="planets-grid">
+
+            <div class="planet-card" style="background-image:url('./src/1.webp')">
+                <div class="overlay">
+                    <h3>Mercury</h3>
+                    <p>Closest to the Sun. Surface temp reaches 430°C</p>
+                </div>
+            </div>
+
+            <div class="planet-card" style="background-image:url('./src/2.webp')">
+                <div class="overlay">
+                    <h3>Venus</h3>
+                    <p>Hottest planet. Dense CO₂ atmosphere</p>
+                </div>
+            </div>
+
+            <div class="planet-card" style="background-image:url('./src/3.webp')">
+                <div class="overlay">
+                    <h3>Earth</h3>
+                    <p>Our home. Only known planet with life</p>
+                </div>
+            </div>
+
+            <div class="planet-card" style="background-image:url('./src/4.webp')">
+                <div class="overlay">
+                    <h3>Mars</h3>
+                    <p>The Red Planet. Home to Olympus Mons</p>
+                </div>
+            </div>
+
+            <div class="planet-card" style="background-image:url('./src/5.webp')">
+                <div class="overlay">
+                    <h3>Jupiter</h3>
+                    <p>Largest planet with the Great Red Spot</p>
+                </div>
+            </div>
+
+            <div class="planet-card" style="background-image:url('./src/6.webp')">
+                <div class="overlay">
+                    <h3>Saturn</h3>
+                    <p>Famous for its stunning ring system</p>
+                </div>
+            </div>
+
+        </div>  
+
+    </section>
+
+    <!-- 2. Space Missions -->
+    <section class="missions">
+        <div class="sec-title">
+            <span>Historic Achievements</span>
+            <h2>Legendary Space<br>Missions</h2>
+            <p>Milestones that defined humanity's quest to conquer the cosmos.</p>
+        </div>
+        <div class="missions-list">
+            <div class="mission-card">
+                <div class="mission-num">01</div>
+                <div class="mission-info">
+                    <h3>Apollo 11</h3>
+                    <p>First humans to walk on the Moon. Neil Armstrong's historic step changed the world forever.</p>
+                    <span class="mission-badge">July 1969</span>
+                </div>
+            </div>
+            <div class="mission-card">
+                <div class="mission-num">02</div>
+                <div class="mission-info">
+                    <h3>Voyager 1</h3>
+                    <p>Launched in 1977, it's now the farthest human-made object, in interstellar space.</p><span
+                        class="mission-badge">Active</span>
+                </div>
+            </div>
+            <div class="mission-card">
+                <div class="mission-num">03</div>
+                <div class="mission-info">
+                    <h3>Hubble Telescope</h3>
+                    <p>Revolutionized our understanding of the universe with stunning deep-field images.</p><span
+                        class="mission-badge">Since 1990</span>
+                </div>
+            </div>
+            <div class="mission-card">
+                <div class="mission-num">04</div>
+                <div class="mission-info">
+                    <h3>Mars Perseverance</h3>
+                    <p>NASA's rover searching for signs of ancient microbial life on the Martian surface.</p><span
+                        class="mission-badge">Active 2021</span>
+                </div>
+            </div>
+            <div class="mission-card">
+                <div class="mission-num">05</div>
+                <div class="mission-info">
+                    <h3>James Webb Telescope</h3>
+                    <p>The most powerful space telescope, peering back 13.5 billion years to the early universe.</p>
+                    <span class="mission-badge">Active 2022</span>
+                </div>
+            </div>
+            <div class="mission-card">
+                <div class="mission-num">06</div>
+                <div class="mission-info">
+                    <h3>Artemis Program</h3>
+                    <p>NASA's mission to return humans to the Moon and prepare for crewed Mars missions.</p><span
+                        class="mission-badge">Ongoing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Star Types -->
+    <section class="stars-sec">
+        <div class="sec-title">
+            <span>Stellar Classification</span>
+            <h2>Types of Stars in<br>the Universe</h2>
+            <p>Stars come in many sizes, colors, and life stages. Each tells a unique cosmic story.</p>
+        </div>
+        <div class="stars-row">
+            <div class="star-type">
+                <div class="star-dot" style="background:rgba(100,149,237,0.2);color:#6495ED">★</div>
+                <h3>Blue Giant</h3>
+                <p>Hottest, most luminous, short lifespan</p>
+            </div>
+            <div class="star-type">
+                <div class="star-dot" style="background:rgba(255,255,255,0.1);color:#fff">★</div>
+                <h3>White Dwarf</h3>
+                <p>Dense remnant of a dead star</p>
+            </div>
+            <div class="star-type">
+                <div class="star-dot" style="background:rgba(255,255,100,0.15);color:#FFD700">★</div>
+                <h3>Yellow Star</h3>
+                <p>Like our Sun. Medium heat & life</p>
+            </div>
+            <div class="star-type">
+                <div class="star-dot" style="background:rgba(255,100,50,0.2);color:#FF6347">★</div>
+                <h3>Red Giant</h3>
+                <p>Aging star in final life stage</p>
+            </div>
+            <div class="star-type">
+                <div class="star-dot" style="background:rgba(150,0,200,0.2);color:#DA70D6">★</div>
+                <h3>Neutron Star</h3>
+                <p>Ultra-dense core remnant</p>
+            </div>
+            <div class="star-type">
+                <div class="star-dot" style="background:rgba(0,0,0,0.5);color:#888;border:1px solid #444">⚫</div>
+                <h3>Black Hole</h3>
+                <p>Point of infinite density, no light escapes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Gallery -->
+    <section class="gallery-sec">
+        <div class="sec-title">
+            <span>Visual Universe</span>
+            <h2>Cosmos Gallery</h2>
+            <p>Breathtaking wonders captured from the depths of space.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <div class="g-bg" style="background:radial-gradient(ellipse,#1a004d,#000)">🌌</div>
+                <div class="gallery-overlay">
+                    <h3>Andromeda Galaxy</h3>
+                    <p>2.5 million light-years away</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="g-bg" style="background:radial-gradient(ellipse,#300030,#050005)">🌸</div>
+                <div class="gallery-overlay">
+                    <h3>Crab Nebula</h3>
+                    <p>Supernova remnant in Taurus</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="g-bg" style="background:radial-gradient(ellipse,#001a30,#000)">🪐</div>
+                <div class="gallery-overlay">
+                    <h3>Saturn's Rings</h3>
+                    <p>Billions of icy particles</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="g-bg" style="background:radial-gradient(ellipse,#1a0800,#000)">☀️</div>
+                <div class="gallery-overlay">
+                    <h3>Solar Flare</h3>
+                    <p>Massive energy bursts from the Sun</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="g-bg" style="background:radial-gradient(ellipse,#00100a,#000)">🌠</div>
+                <div class="gallery-overlay">
+                    <h3>Aurora Borealis</h3>
+                    <p>Earth's dazzling light display</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="g-bg" style="background:radial-gradient(ellipse,#080020,#000)">🔭</div>
+                <div class="gallery-overlay">
+                    <h3>Deep Field View</h3>
+                    <p>Thousands of galaxies in one frame</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Facts Counter -->
+    <section class="facts-sec">
+        <div class="sec-title">
+            <span>By The Numbers</span>
+            <h2>Universe at a Glance</h2>
+            <p>Mind-bending numbers that reveal the true scale of our cosmos.</p>
+        </div>
+        <div class="facts-grid">
+            <div class="fact-box">
+                <div class="fact-num" id="c1">0</div>
+                <div class="fact-label">Galaxies in the Observable Universe</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-num" id="c2">0</div>
+                <div class="fact-label">Light-years across the Universe</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-num" id="c3">0</div>
+                <div class="fact-label">Stars in the Milky Way</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-num" id="c4">0</div>
+                <div class="fact-label">Exoplanets Discovered</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CTA / Newsletter -->
+    <section class="cta-sec">
+        <div class="cta-inner">
+            <div class="big">Explore the <span>Infinite</span><br>Universe with Us</div>
+            <p>Join thousands of stargazers, astronomers, and space enthusiasts. Get weekly cosmic updates, mission
+                news, and sky events in your inbox.</p>
+            <div class="cta-form">
+                <input type="email" placeholder="Enter your email address">
+                <button class="cta-btn">🚀 Join Now</button>
+            </div>
+        </div>
+    </section>
+
 
     <section class="footer">
 
@@ -645,6 +1349,31 @@
             }
         })
 
+        // other sections
+
+        const targets = [{ id: "c1", val: 2, suffix: "T+" }, { id: "c2", val: 93, suffix: "B" }, { id: "c3", val: 400, suffix: "B+" }, { id: "c4", val: 5500, suffix: "+" }];
+        function animCount(el, target, suffix, dur = 1800) {
+            let start = null;
+            function step(ts) {
+                if (!start) start = ts;
+                let p = Math.min((ts - start) / dur, 1);
+                let ease = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.floor(ease * target) + (p === 1 ? suffix : "");
+                if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    targets.forEach(t => {
+                        let el = document.getElementById(t.id);
+                        if (el && el.textContent === "0") animCount(el, t.val, t.suffix);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelector(".facts-sec") && obs.observe(document.querySelector(".facts-sec"));
     </script>
 </body>
 
