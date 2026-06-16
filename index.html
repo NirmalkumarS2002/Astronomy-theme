@@ -220,22 +220,14 @@
             align-items: center;
             gap: 5px;
             margin-bottom: 20px;
-        }
-
-
-        .hero-main>p span {
-            font-size: 10px;
-            color: green;
-            font-weight: bold;
-            border-radius: 50%;
-            box-shadow: 1px 2px 6px green;
+            color: orange;
         }
 
 
         .hero-main h1 {
             font-size: clamp(35px, 5vw, 70px);
             text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
             text-transform: uppercase;
             line-height: 1.2;
             margin-bottom: 20px
@@ -469,136 +461,97 @@
             border: 1px solid rgba(255, 165, 0, 0.3)
         }
 
-        /* 3. Star Types */
-        .stars-sec {
-            padding: 80px 40px;
-            background: linear-gradient(180deg, #040410, #000)
-        }
-
-        .stars-row {
-            display: flex;
-            gap: 0;
-            max-width: 1000px;
-            margin: 0 auto;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            overflow: hidden;
-            flex-wrap: wrap
-        }
-
-        .star-type {
-            flex: 1;
-            min-width: 140px;
-            padding: 30px 18px;
-            text-align: center;
-            border-right: 1px solid rgba(255, 255, 255, 0.06);
-            transition: 0.3s;
-            cursor: pointer
-        }
-
-        .star-type:last-child {
-            border-right: none
-        }
-
-        .star-type:hover {
-            background: rgba(255, 165, 0, 0.07)
-        }
-
-        .star-dot {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin: 0 auto 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px
-        }
-
-        .star-type h3 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: white;
-        }
-
-        .star-type p {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.45);
-            line-height: 1.6
-        }
 
         /* 4. Gallery */
         .gallery-sec {
             padding: 80px 40px;
-            background: #000
+            background: #000;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            max-width: 1100px;
-            margin: 0 auto
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .gallery-card {
-            border-radius: 14px;
-            overflow: hidden;
             position: relative;
-            aspect-ratio: 4/3;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: 0.3s;
-            cursor: pointer
+            height: 280px;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all .4s ease;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.12);
         }
 
         .gallery-card:hover {
-            transform: scale(1.03);
-            border-color: orange
-        }
-
-        .gallery-card .g-bg {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px
+            border-color: orange;
+            box-shadow: 0 20px 40px rgba(255, 165, 0, .15);
         }
 
         .gallery-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-            padding: 20px 16px 14px;
-            transform: translateY(10px);
-            opacity: 0;
-            transition: 0.3s
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+
+            background: linear-gradient(transparent 30%,
+                    rgba(0, 0, 0, .85) 100%);
+
+            transition: .4s ease;
         }
 
         .gallery-card:hover .gallery-overlay {
-            opacity: 1;
-            transform: translateY(0)
+            background: linear-gradient(transparent 10%,
+                    rgba(0, 0, 0, .92) 100%);
         }
 
         .gallery-overlay h3 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 4px;
             color: white;
+            font-size: 20px;
+            margin-bottom: 8px;
+            transform: translateY(20px);
+            transition: .4s ease;
         }
 
         .gallery-overlay p {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.6)
+            color: rgba(255, 255, 255, .75);
+            font-size: 13px;
+            line-height: 1.6;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: .4s ease;
+        }
+
+        .gallery-card:hover .gallery-overlay h3,
+        .gallery-card:hover .gallery-overlay p {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         /* 5. Facts Counter */
         .facts-sec {
             padding: 80px 40px;
-            background: linear-gradient(135deg, #0a0500, #05080a)
+          background: linear-gradient(135deg, #0a050098, #05080aa6),url("./src/section-bg.webp");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-attachment: fixed;
         }
 
         .facts-grid {
@@ -711,7 +664,6 @@
 
             .solar,
             .missions,
-            .stars-sec,
             .gallery-sec,
             .facts-sec,
             .cta-sec {
@@ -826,20 +778,21 @@
 
         .footer-email {
             background: transparent;
-            border: 1px solid orange;
+            border: 1px solid rgba(255, 165, 0, 0.3);
             font-size: 14px;
-            padding: 10px 20px;
+            padding: 15px 20px;
             width: 100%;
-            border-radius: 6px;
+            border-radius: 10px;
             color: white;
         }
 
         .footer-btn {
             font-size: 14px;
-            padding: 10px 20px;
+            padding: 15px 20px;
             width: 100%;
             border: none;
-            border-radius: 6px;
+            font-weight: bold;
+            border-radius: 10px;
             background: linear-gradient(135deg, #eeb03c, #ff9800);
         }
 
@@ -908,6 +861,104 @@
                 margin-inline: 15px;
             }
         }
+
+        .space-slider-section {
+            padding: 100px 20px;
+            background: #000;
+        }
+
+        .slider-container {
+            max-width: 1400px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            gap: 20px;
+            transition: transform .8s ease;
+        }
+
+        .slide-card {
+            min-width: calc((100% - 40px)/3);
+            height: 650px;
+
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+
+            cursor: pointer;
+        }
+
+        .slide-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(transparent 45%,
+                    rgba(0, 0, 0, .85));
+        }
+
+        .slide-content {
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            z-index: 5;
+        }
+
+        .slide-content h3 {
+            color: white;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .slide-content button {
+            width: 45px;
+            height: 45px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: orange;
+            color: white;
+
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #666;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        @media(max-width:900px) {
+
+            .slide-card {
+                min-width: 100%;
+                height: 500px;
+            }
+        }
     </style>
 
 <body>
@@ -948,7 +999,7 @@
 
 
         <div class="hero-main">
-            <p> <span class="material-symbols-outlined">circle</span>Active Mission</p>
+            <p>Active Mission</p>
             <h1>Humanity's <br> Journey Into <br> space</h1>
 
             <p class="hero-para">We Are Dedicated to advancing Humanity by expoloring the
@@ -1030,7 +1081,7 @@
                 </div>
             </div>
 
-        </div>  
+        </div>
 
     </section>
 
@@ -1093,98 +1144,81 @@
         </div>
     </section>
 
-    <!-- 3. Star Types -->
-    <section class="stars-sec">
-        <div class="sec-title">
-            <span>Stellar Classification</span>
-            <h2>Types of Stars in<br>the Universe</h2>
-            <p>Stars come in many sizes, colors, and life stages. Each tells a unique cosmic story.</p>
-        </div>
-        <div class="stars-row">
-            <div class="star-type">
-                <div class="star-dot" style="background:rgba(100,149,237,0.2);color:#6495ED">★</div>
-                <h3>Blue Giant</h3>
-                <p>Hottest, most luminous, short lifespan</p>
-            </div>
-            <div class="star-type">
-                <div class="star-dot" style="background:rgba(255,255,255,0.1);color:#fff">★</div>
-                <h3>White Dwarf</h3>
-                <p>Dense remnant of a dead star</p>
-            </div>
-            <div class="star-type">
-                <div class="star-dot" style="background:rgba(255,255,100,0.15);color:#FFD700">★</div>
-                <h3>Yellow Star</h3>
-                <p>Like our Sun. Medium heat & life</p>
-            </div>
-            <div class="star-type">
-                <div class="star-dot" style="background:rgba(255,100,50,0.2);color:#FF6347">★</div>
-                <h3>Red Giant</h3>
-                <p>Aging star in final life stage</p>
-            </div>
-            <div class="star-type">
-                <div class="star-dot" style="background:rgba(150,0,200,0.2);color:#DA70D6">★</div>
-                <h3>Neutron Star</h3>
-                <p>Ultra-dense core remnant</p>
-            </div>
-            <div class="star-type">
-                <div class="star-dot" style="background:rgba(0,0,0,0.5);color:#888;border:1px solid #444">⚫</div>
-                <h3>Black Hole</h3>
-                <p>Point of infinite density, no light escapes</p>
-            </div>
-        </div>
-    </section>
-
     <!-- 4. Gallery -->
     <section class="gallery-sec">
+
         <div class="sec-title">
             <span>Visual Universe</span>
             <h2>Cosmos Gallery</h2>
             <p>Breathtaking wonders captured from the depths of space.</p>
         </div>
+
         <div class="gallery-grid">
+
             <div class="gallery-card">
-                <div class="g-bg" style="background:radial-gradient(ellipse,#1a004d,#000)">🌌</div>
+                <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200" alt="Andromeda Galaxy">
                 <div class="gallery-overlay">
                     <h3>Andromeda Galaxy</h3>
                     <p>2.5 million light-years away</p>
                 </div>
             </div>
+
             <div class="gallery-card">
-                <div class="g-bg" style="background:radial-gradient(ellipse,#300030,#050005)">🌸</div>
+                <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200" alt="Crab Nebula">
                 <div class="gallery-overlay">
                     <h3>Crab Nebula</h3>
                     <p>Supernova remnant in Taurus</p>
                 </div>
             </div>
+
             <div class="gallery-card">
-                <div class="g-bg" style="background:radial-gradient(ellipse,#001a30,#000)">🪐</div>
+                <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200" alt="Saturn Rings">
                 <div class="gallery-overlay">
                     <h3>Saturn's Rings</h3>
                     <p>Billions of icy particles</p>
                 </div>
             </div>
+
             <div class="gallery-card">
-                <div class="g-bg" style="background:radial-gradient(ellipse,#1a0800,#000)">☀️</div>
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200" alt="Solar Flare">
                 <div class="gallery-overlay">
                     <h3>Solar Flare</h3>
                     <p>Massive energy bursts from the Sun</p>
                 </div>
             </div>
+
             <div class="gallery-card">
-                <div class="g-bg" style="background:radial-gradient(ellipse,#00100a,#000)">🌠</div>
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200" alt="Aurora Borealis">
                 <div class="gallery-overlay">
                     <h3>Aurora Borealis</h3>
                     <p>Earth's dazzling light display</p>
                 </div>
             </div>
+
             <div class="gallery-card">
-                <div class="g-bg" style="background:radial-gradient(ellipse,#080020,#000)">🔭</div>
+                <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=1200" alt="Deep Field View">
                 <div class="gallery-overlay">
                     <h3>Deep Field View</h3>
                     <p>Thousands of galaxies in one frame</p>
                 </div>
             </div>
+
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1200" alt="Milky Way Core">
+                <div class="gallery-overlay">
+                    <h3>Milky Way Core</h3>
+                    <p>The glowing heart of our home galaxy</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200" alt="Eagle Nebula">
+                <div class="gallery-overlay">
+                    <h3>Eagle Nebula</h3>
+                    <p>Home of the famous Pillars of Creation</p>
+                </div>
+            </div>
         </div>
+
     </section>
 
     <!-- 5. Facts Counter -->
@@ -1214,6 +1248,62 @@
         </div>
     </section>
 
+    <!-- seciton 5 -->
+
+    <section class="space-slider-section">
+
+        <div class="slider-container">
+
+            <div class="slider-track">
+
+                <div class="slide-card">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200" alt="">
+                    <div class="slide-content">
+                        <h3>Mars Mission</h3>
+                        <button>→</button>
+                    </div>
+                </div>
+
+                <div class="slide-card">
+                    <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=1200" alt="">
+                    <div class="slide-content">
+                        <h3>Space Explorer</h3>
+                        <button>→</button>
+                    </div>
+                </div>
+
+                <div class="slide-card">
+                    <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200" alt="">
+                    <div class="slide-content">
+                        <h3>Galaxy Discovery</h3>
+                        <button>→</button>
+                    </div>
+                </div>
+
+                <div class="slide-card">
+                    <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200" alt="">
+                    <div class="slide-content">
+                        <h3>Deep Space</h3>
+                        <button>→</button>
+                    </div>
+                </div>
+
+                <div class="slide-card">
+                    <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200" alt="">
+                    <div class="slide-content">
+                        <h3>Cosmic Horizon</h3>
+                        <button>→</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="dots"></div>
+
+    </section>
+
     <!-- 6. CTA / Newsletter -->
     <section class="cta-sec">
         <div class="cta-inner">
@@ -1222,7 +1312,7 @@
                 news, and sky events in your inbox.</p>
             <div class="cta-form">
                 <input type="email" placeholder="Enter your email address">
-                <button class="cta-btn">🚀 Join Now</button>
+                <button class="cta-btn">Join Now</button>
             </div>
         </div>
     </section>
@@ -1374,6 +1464,55 @@
             });
         }, { threshold: 0.3 });
         document.querySelector(".facts-sec") && obs.observe(document.querySelector(".facts-sec"));
+
+        //secton 5
+
+        const track = document.querySelector(".slider-track");
+        const cards = document.querySelectorAll(".slide-card");
+        const dotsContainer = document.querySelector(".dots");
+
+        let current = 0;
+
+        cards.forEach((_, index) => {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+
+            if (index === 0) {
+                dot.classList.add("active");
+            }
+
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dot");
+
+        function updateSlider() {
+
+            const cardWidth =
+                cards[0].offsetWidth + 20;
+
+            track.style.transform =
+                `translateX(-${current * cardWidth}px)`;
+
+            dots.forEach(dot =>
+                dot.classList.remove("active")
+            );
+
+            dots[current].classList.add("active");
+        }
+
+        setInterval(() => {
+
+            current++;
+
+            if (current > cards.length - 3) {
+                current = 0;
+            }
+
+            updateSlider();
+
+        }, 2000);
+
     </script>
 </body>
 
