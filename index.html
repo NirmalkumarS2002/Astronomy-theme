@@ -714,7 +714,7 @@
         }
 
 
-      /* Footer */
+        /* Footer */
 
         .footer {
             width: 100%;
@@ -850,12 +850,13 @@
             opacity: 0.5;
         }
 
-         .contact a{
+        .contact a {
             display: flex;
             align-items: center;
             gap: 6px;
-         }
-        .contact span{
+        }
+
+        .contact span {
             font-size: 15px;
         }
 
@@ -925,9 +926,9 @@
                 width: 150px;
             }
 
-              .contact span{
-            font-size: 13px;
-        }
+            .contact span {
+                font-size: 13px;
+            }
 
         }
 
@@ -1002,6 +1003,9 @@
 
             font-size: 22px;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .dots {
@@ -1378,7 +1382,9 @@
                     <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200" alt="">
                     <div class="slide-content">
                         <h3>Mars Mission</h3>
-                        <button>→</button>
+                        <button class="errorpage"><span class="material-symbols-outlined">
+                                arrow_forward
+                            </span></button>
                     </div>
                 </div>
 
@@ -1386,7 +1392,9 @@
                     <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=1200" alt="">
                     <div class="slide-content">
                         <h3>Space Explorer</h3>
-                        <button>→</button>
+                        <button class="errorpage"><span class="material-symbols-outlined">
+                                arrow_forward
+                            </span></button>
                     </div>
                 </div>
 
@@ -1394,7 +1402,9 @@
                     <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200" alt="">
                     <div class="slide-content">
                         <h3>Galaxy Discovery</h3>
-                        <button>→</button>
+                        <button class="errorpage"><span class="material-symbols-outlined">
+                                arrow_forward
+                            </span></button>
                     </div>
                 </div>
 
@@ -1402,7 +1412,9 @@
                     <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200" alt="">
                     <div class="slide-content">
                         <h3>Deep Space</h3>
-                        <button>→</button>
+                        <button class="errorpage"><span class="material-symbols-outlined">
+                                arrow_forward
+                            </span></button>
                     </div>
                 </div>
 
@@ -1410,7 +1422,9 @@
                     <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200" alt="">
                     <div class="slide-content">
                         <h3>Cosmic Horizon</h3>
-                        <button>→</button>
+                        <button class="errorpage"><span class="material-symbols-outlined">
+                                arrow_forward
+                            </span></button>
                     </div>
                 </div>
 
@@ -1467,11 +1481,11 @@
                             mail
                         </span>space@gmail.com</a>
                     <a href="404.html"><span class="material-symbols-outlined">
-location_on
-</span>Chennai, India</a>
+                            location_on
+                        </span>Chennai, India</a>
                     <a href="404.html"><span class="material-symbols-outlined">
-call
-</span>+91 1234567890</a>
+                            call
+                        </span>+91 1234567890</a>
                 </div>
             </div>
 
@@ -1698,6 +1712,18 @@ call
         revealElements.forEach(el => {
             revealObserver.observe(el);
         });
+
+                //error page
+
+        document.querySelectorAll(".errorpage").forEach(element => {
+
+    element.style.cursor = "pointer";
+
+    element.addEventListener("click", () => {
+        window.location.href = "404.html";
+    });
+
+});
     </script>
 </body>
 

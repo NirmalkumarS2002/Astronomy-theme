@@ -1069,7 +1069,7 @@
             <h1>Exploring the <span>Infinite</span><br>Universe</h1>
             <p>We are a team of astronomers, engineers, and visionaries dedicated to unlocking the mysteries of the
                 cosmos — from our nearest planetary neighbors to the farthest galaxies ever observed.</p>
-            <a href="#mission" class="hero-cta">Discover Our Story</a>
+            <a href="404.html" class="hero-cta">Discover Our Story</a>
         </div>
 
         <div class="scroll-hint">
@@ -1159,9 +1159,9 @@
                     <p>Leads our black-hole research division with 18 years of observational expertise from NASA and
                         ESO.</p>
                     <div class="team-socials">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -1175,9 +1175,9 @@
                     <p>Discovered two potentially habitable exoplanets using our transit photometry pipeline built
                         in-house.</p>
                     <div class="team-socials">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -1191,9 +1191,9 @@
                     <p>Designed the thermal control systems deployed aboard our CubeSat constellation orbiting at 600
                         km.</p>
                     <div class="team-socials">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -1458,6 +1458,18 @@ call
             alert("Subscription successful!");
             footerEmail.value = "";
         });
+
+        //error page
+
+        document.querySelectorAll(".errorpage").forEach(element => {
+
+    element.style.cursor = "pointer";
+
+    element.addEventListener("click", () => {
+        window.location.href = "404.html";
+    });
+
+});
     </script>
 </body>
 

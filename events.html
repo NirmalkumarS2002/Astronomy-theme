@@ -1424,8 +1424,8 @@
             <p>Join astronomers, researchers, and cosmic enthusiasts from around the world at our annual series of
                 sky-gazing nights, expert lectures, and deep-space workshops.</p>
             <div class="ev-hero-btns">
-                <a href="#upcoming" class="btn-primary">Browse Events</a>
-                <a href="#register" class="btn-outline">Register Now</a>
+                <a href="404.html" class="btn-primary">Browse Events</a>
+                <a href="404.html" class="btn-outline">Register Now</a>
             </div>
         </div>
 
@@ -1470,7 +1470,7 @@
                     </div>
                     <div class="event-footer">
                         <div class="event-price">Free <small>Open Registration</small></div>
-                        <a href="#register" class="btn-primary">Register</a>
+                        <a href="404.html" class="btn-primary">Register</a>
                     </div>
                 </div>
             </div>
@@ -1496,7 +1496,7 @@
                     </div>
                     <div class="event-footer">
                         <div class="event-price">Rs 1,200 <small>per person</small></div>
-                        <a href="#register" class="btn-primary">Register</a>
+                        <a href="404.html" class="btn-primary">Register</a>
                     </div>
                 </div>
             </div>
@@ -1522,7 +1522,7 @@
                     </div>
                     <div class="event-footer">
                         <div class="event-price">Rs 350 <small>per person</small></div>
-                        <a href="#register" class="btn-primary">Register</a>
+                        <a href="404.html" class="btn-primary">Register</a>
                     </div>
                 </div>
             </div>
@@ -1548,7 +1548,7 @@
                     </div>
                     <div class="event-footer">
                         <div class="event-price">Rs 8,500 <small>includes travel & meals</small></div>
-                        <a href="#register" class="btn-primary">Register</a>
+                        <a href="404.html" class="btn-primary">Register</a>
                     </div>
                 </div>
             </div>
@@ -1574,7 +1574,7 @@
                     </div>
                     <div class="event-footer">
                         <div class="event-price">Rs 600 <small>per person</small></div>
-                        <a href="#register" class="btn-primary">Register</a>
+                        <a href="404.html" class="btn-primary">Register</a>
                     </div>
                 </div>
             </div>
@@ -1600,7 +1600,7 @@
                     </div>
                     <div class="event-footer">
                         <div class="event-price">Rs 4,200 <small>per child</small></div>
-                        <a href="#register" class="btn-primary">Register</a>
+                        <a href="404.html" class="btn-primary">Register</a>
                     </div>
                 </div>
             </div>
@@ -1663,8 +1663,8 @@
                 <p class="speakers-label" style="margin-bottom:28px">60+ speakers confirmed</p>
 
                 <div style="display:flex; gap:14px; flex-wrap:wrap;">
-                    <a href="#register" class="btn-primary">Get Your Pass</a>
-                    <a href="#" class="btn-outline">View Full Agenda</a>
+                    <a href="404.html" class="btn-primary">Get Your Pass</a>
+                    <a href="404.html" class="btn-outline">View Full Agenda</a>
                 </div>
             </div>
 
@@ -1684,9 +1684,9 @@
         </div>
 
         <div class="schedule-tabs reveal">
-            <button class="tab-btn active">Day 1 — Sep 28</button>
-            <button class="tab-btn">Day 2 — Sep 29</button>
-            <button class="tab-btn">Day 3 — Sep 30</button>
+            <button class="tab-btn active errorpage">Day 1 — Sep 28</button>
+            <button class="tab-btn errorpage">Day 2 — Sep 29</button>
+            <button class="tab-btn errorpage">Day 3 — Sep 30</button>
         </div>
 
         <div class="timeline">
@@ -2117,6 +2117,17 @@ footerBtn.addEventListener("click", function (e) {
     footerEmail.value = "";
 });
 
+        //error page
+
+        document.querySelectorAll(".errorpage").forEach(element => {
+
+    element.style.cursor = "pointer";
+
+    element.addEventListener("click", () => {
+        window.location.href = "404.html";
+    });
+
+});
     </script>
 </body>
 
