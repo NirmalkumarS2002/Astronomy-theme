@@ -1163,7 +1163,6 @@
 
 
         
-       
         /* Footer */
 
         .footer {
@@ -1281,7 +1280,7 @@
         }
 
         .footer-footer p {
-            font-size: 15   px;
+            font-size: 15px;
         }
 
         .policy a {
@@ -1298,6 +1297,15 @@
         .footer-line {
             margin-inline: 30px;
             opacity: 0.5;
+        }
+
+         .contact a{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+         }
+        .contact span{
+            font-size: 15px;
         }
 
         @media (max-width:550px) {
@@ -1329,7 +1337,47 @@
 
             .policy a {
                 margin-inline: 15px;
+                font-size: 13px;
             }
+
+            .footer-footer p {
+                font-size: 13px;
+            }
+
+            .footer-link a {
+                font-size: 13px;
+            }
+
+            .footer-box h2 {
+                font-size: 23px;
+            }
+
+            .footer-box:first-child p {
+                font-size: 13px;
+                line-height: 1.9;
+            }
+
+            .footer-box:last-child p {
+                font-size: 13px;
+                text-align: center;
+            }
+
+            .footer-email {
+                font-size: 12px;
+            }
+
+            .footer-btn {
+                font-size: 12px;
+            }
+
+            .footer-box img {
+                width: 150px;
+            }
+
+              .contact span{
+            font-size: 13px;
+        }
+
         }
     </style>
 
@@ -1820,78 +1868,64 @@
     </section>
 
     
-    <section class="footer">
-
+      <section class="footer">
         <div class="footer-main">
             <div class="footer-box">
-
-                <a href=""><img src="./src/logo.webp" alt="company logo"></a>
-
-                <p>We Explore the universe with advanced
-                    technology, driving innovation and
-                    discovery to benefit all humanity.</p>
-
+                <a href="index.html"><img src="./src/logo.webp" alt="company  errorpage"></a>
+                <p>We Explore the universe with advanced technology, driving innovation and discovery to benefit all
+                    humanity.</p>
                 <div class="login-socials">
                     <div class="social-icon errorpage"><i class="fa-brands fa-linkedin-in"></i></div>
                     <div class="social-icon errorpage"><i class="fa-brands fa-x-twitter"></i></div>
                     <div class="social-icon errorpage"><i class="fa-brands fa-facebook-f"></i></div>
                     <div class="social-icon errorpage"><i class="fa-brands fa-youtube"></i></div>
                 </div>
-
             </div>
 
             <div class="footer-box">
-
                 <h2>Company</h2>
-
                 <div class="footer-link">
-                    <a href="">About</a>
-                    <a href="">Pages</a>
-                    <a href="">Event</a>
-                    <a href="">Blog</a>
+                    <a href="about.html">About</a>
+                    <a href="pages.html">Service</a>
+                    <a href="events.html">Event</a>
+                    <a href="blog.html">Blog</a>
                 </div>
-
             </div>
 
             <div class="footer-box">
-
                 <h2>Address</h2>
-
-                <div class="footer-link">
-                    <a href="">space@gmail.com</a>
-                    <a href="">Chennai,India</a>
-                    <a href="">+91 1234567890</a>
+                <div class="footer-link contact">
+                    <a href="404.html"><span class="material-symbols-outlined">
+                            mail
+                        </span>space@gmail.com</a>
+                    <a href="404.html"><span class="material-symbols-outlined">
+location_on
+</span>Chennai, India</a>
+                    <a href="404.html"><span class="material-symbols-outlined">
+call
+</span>+91 1234567890</a>
                 </div>
-
             </div>
 
             <div class="footer-box">
-
                 <h2>Newsletter</h2>
-
                 <div class="footer-link">
-
                     <p>Stay Informed with Stackly</p>
                     <input type="email" class="footer-email" placeholder="Please Subscribe">
                     <button class="footer-btn">Subscribe</button>
-
-
                 </div>
-
             </div>
-
         </div>
+
         <hr class="footer-line">
+
         <div class="footer-footer">
             <p>@ 2026 Your Stackly. All Rights Reserved</p>
-
             <div class="policy">
-                <a href="">Privacy Policy</a>
-                <a href="">Terms of Use</a>
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms of Use</a>
             </div>
-
         </div>
-
     </section>
 
     <script>

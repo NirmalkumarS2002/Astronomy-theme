@@ -94,7 +94,7 @@
             width: 100%;
         }
 
-        
+
         .menus ul li a.active::after {
             width: 100%;
         }
@@ -151,7 +151,7 @@
             }
 
             .logo img {
-                width: 160px;
+                width: 150px;
             }
 
             .menu-btn {
@@ -672,112 +672,113 @@
             padding: 100px 60px;
             text-align: center;
         }
-.testimonial-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 28px;
-    align-items: stretch;
-}
 
-.testimonial-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 18px;
-    padding: 36px 30px;
-    text-align: left;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-    position: relative;
+        .testimonial-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            align-items: stretch;
+        }
 
-    /* Alignment Fix */
-    display: flex;
-    flex-direction: column;
-    height: 430px;
-}
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 36px 30px;
+            text-align: left;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            position: relative;
 
-.testimonial-card:hover {
-    border-color: rgba(255, 152, 0, 0.35);
-    transform: translateY(-5px);
-}
+            /* Alignment Fix */
+            display: flex;
+            flex-direction: column;
+            height: 430px;
+        }
 
-.quote-mark {
-    font-size: 56px;
-    color: rgba(255, 152, 0, 0.25);
-    font-family: "Chelsea Market", cursive;
-    line-height: 0.8;
-    margin-bottom: 20px;
-    display: block;
-}
+        .testimonial-card:hover {
+            border-color: rgba(255, 152, 0, 0.35);
+            transform: translateY(-5px);
+        }
 
-.star-row {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 16px;
-}
+        .quote-mark {
+            font-size: 56px;
+            color: rgba(255, 152, 0, 0.25);
+            font-family: "Chelsea Market", cursive;
+            line-height: 0.8;
+            margin-bottom: 20px;
+            display: block;
+        }
 
-.star-row i {
-    color: orange;
-    font-size: 14px;
-}
+        .star-row {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 16px;
+        }
 
-.testimonial-card p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.72);
-    margin-bottom: 28px;
+        .star-row i {
+            color: orange;
+            font-size: 14px;
+        }
 
-    /* Makes all cards equal */
-    flex-grow: 1;
-}
+        .testimonial-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.72);
+            margin-bottom: 28px;
 
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+            /* Makes all cards equal */
+            flex-grow: 1;
+        }
 
-    /* Push author section to bottom */
-    margin-top: auto;
-}
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
 
-.testimonial-author img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-    border: 2px solid orange;
-    flex-shrink: 0;
-}
+            /* Push author section to bottom */
+            margin-top: auto;
+        }
 
-.author-info h4 {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: white;
-    margin: 0 0 4px;
-}
+        .testimonial-author img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 2px solid orange;
+            flex-shrink: 0;
+        }
 
-.author-info span {
-    font-size: 13px;
-    color: orange;
-    line-height: 1.5;
-}
+        .author-info h4 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: white;
+            margin: 0 0 4px;
+        }
 
-@media (max-width: 780px) {
-    .testimonial-section {
-        padding: 70px 24px;
-    }
+        .author-info span {
+            font-size: 13px;
+            color: orange;
+            line-height: 1.5;
+        }
 
-    .testimonial-grid {
-        grid-template-columns: 1fr;
-    }
+        @media (max-width: 780px) {
+            .testimonial-section {
+                padding: 70px 24px;
+            }
 
-    .testimonial-card {
-          height: auto;
-        min-height: 400px;
-    }
-}
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card {
+                height: auto;
+                min-height: 400px;
+            }
+        }
 
 
 
@@ -898,7 +899,7 @@
         }
 
         .footer-footer p {
-            font-size: 15 px;
+            font-size: 15px;
         }
 
         .policy a {
@@ -915,6 +916,15 @@
         .footer-line {
             margin-inline: 30px;
             opacity: 0.5;
+        }
+
+         .contact a{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+         }
+        .contact span{
+            font-size: 15px;
         }
 
         @media (max-width:550px) {
@@ -946,7 +956,47 @@
 
             .policy a {
                 margin-inline: 15px;
+                font-size: 13px;
             }
+
+            .footer-footer p {
+                font-size: 13px;
+            }
+
+            .footer-link a {
+                font-size: 13px;
+            }
+
+            .footer-box h2 {
+                font-size: 23px;
+            }
+
+            .footer-box:first-child p {
+                font-size: 13px;
+                line-height: 1.9;
+            }
+
+            .footer-box:last-child p {
+                font-size: 13px;
+                text-align: center;
+            }
+
+            .footer-email {
+                font-size: 12px;
+            }
+
+            .footer-btn {
+                font-size: 12px;
+            }
+
+            .footer-box img {
+                width: 150px;
+            }
+
+              .contact span{
+            font-size: 13px;
+        }
+
         }
 
         /* ── SCROLL REVEAL ANIMATION ── */
@@ -984,8 +1034,7 @@
     <!-- ── HEADER ── -->
     <section class="header">
         <div class="logo">
-            <img src="./src/logo.webp" alt="Astronomy Logo"
-                style="filter:invert(1) sepia(1) saturate(5) hue-rotate(5deg);">
+            <img src="./src/logo.webp" alt="Astronomy Logo">
         </div>
 
         <nav class="menus">
@@ -1274,34 +1323,39 @@
     <section class="footer">
         <div class="footer-main">
             <div class="footer-box">
-                <a href=""><img src="./src/logo.webp" alt="company logo"
-                        style="filter:invert(1) sepia(1) saturate(5) hue-rotate(5deg); width:140px;"></a>
+                <a href="index.html"><img src="./src/logo.webp" alt="company  errorpage"></a>
                 <p>We Explore the universe with advanced technology, driving innovation and discovery to benefit all
                     humanity.</p>
                 <div class="login-socials">
-                    <div class="social-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-                    <div class="social-icon"><i class="fa-brands fa-x-twitter"></i></div>
-                    <div class="social-icon"><i class="fa-brands fa-facebook-f"></i></div>
-                    <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="social-icon errorpage"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="social-icon errorpage"><i class="fa-brands fa-x-twitter"></i></div>
+                    <div class="social-icon errorpage"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="social-icon errorpage"><i class="fa-brands fa-youtube"></i></div>
                 </div>
             </div>
 
             <div class="footer-box">
                 <h2>Company</h2>
                 <div class="footer-link">
-                    <a href="">About</a>
-                    <a href="">Service</a>
-                    <a href="">Event</a>
-                    <a href="">Blog</a>
+                    <a href="about.html">About</a>
+                    <a href="pages.html">Service</a>
+                    <a href="events.html">Event</a>
+                    <a href="blog.html">Blog</a>
                 </div>
             </div>
 
             <div class="footer-box">
                 <h2>Address</h2>
-                <div class="footer-link">
-                    <a href="">space@gmail.com</a>
-                    <a href="">Chennai, India</a>
-                    <a href="">+91 1234567890</a>
+                <div class="footer-link contact">
+                    <a href="404.html"><span class="material-symbols-outlined">
+                            mail
+                        </span>space@gmail.com</a>
+                    <a href="404.html"><span class="material-symbols-outlined">
+location_on
+</span>Chennai, India</a>
+                    <a href="404.html"><span class="material-symbols-outlined">
+call
+</span>+91 1234567890</a>
                 </div>
             </div>
 
@@ -1320,8 +1374,8 @@
         <div class="footer-footer">
             <p>@ 2026 Your Stackly. All Rights Reserved</p>
             <div class="policy">
-                <a href="">Privacy Policy</a>
-                <a href="">Terms of Use</a>
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms of Use</a>
             </div>
         </div>
     </section>
@@ -1376,34 +1430,34 @@
 
         reveals.forEach(el => observer.observe(el));
 
-        
-//footer validation
 
-const footerEmail = document.querySelector(".footer-email");
-const footerBtn = document.querySelector(".footer-btn");
+        //footer validation
 
-footerBtn.addEventListener("click", function (e) {
-    e.preventDefault();
+        const footerEmail = document.querySelector(".footer-email");
+        const footerBtn = document.querySelector(".footer-btn");
 
-    const email = footerEmail.value.trim();
+        footerBtn.addEventListener("click", function (e) {
+            e.preventDefault();
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const email = footerEmail.value.trim();
 
-    if (email === "") {
-        alert("Please enter your email address");
-        footerEmail.focus();
-        return;
-    }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address");
-        footerEmail.focus();
-        return;
-    }
+            if (email === "") {
+                alert("Please enter your email address");
+                footerEmail.focus();
+                return;
+            }
 
-    alert("Subscription successful!");
-    footerEmail.value = "";
-});
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address");
+                footerEmail.focus();
+                return;
+            }
+
+            alert("Subscription successful!");
+            footerEmail.value = "";
+        });
     </script>
 </body>
 
