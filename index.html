@@ -26,7 +26,7 @@
 
         body {
             overflow-x: hidden;
-             font-family: "Noto Sans", sans-serif;
+            font-family: "Noto Sans", sans-serif;
         }
 
         .header {
@@ -93,9 +93,15 @@
 
         .menus ul li a:hover::after {
             width: 100%;
-
         }
 
+        .menus ul li a.active::after {
+            width: 100%;
+        }
+
+        .menus ul li a.active {
+            color: orange;
+        }
 
         .menu-btn,
         .close-btn {
@@ -315,7 +321,7 @@
             margin-bottom: 48px
         }
 
-        .sec-title >span {
+        .sec-title>span {
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 5px;
@@ -618,7 +624,7 @@
             line-height: 1.15;
             margin-bottom: 20px;
             color: white;
-             font-family: "Chelsea Market", cursive;
+            font-family: "Chelsea Market", cursive;
         }
 
         .cta-inner .big span {
@@ -825,7 +831,7 @@
         }
 
         .footer-footer p {
-            font-size: 15   px;
+            font-size: 15 px;
         }
 
         .policy a {
@@ -979,49 +985,49 @@
 
         /* animation */
 
-        .reveal{
-    opacity: 0;
-    transform: translateY(60px);
-    transition: all 0.8s ease;
-}
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s ease;
+        }
 
-.reveal.active{
-    opacity: 1;
-    transform: translateY(0);
-}
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.reveal-left{
-    opacity: 0;
-    transform: translateX(-80px);
-    transition: all 0.8s ease;
-}
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: all 0.8s ease;
+        }
 
-.reveal-left.active{
-    opacity: 1;
-    transform: translateX(0);
-}
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
 
-.reveal-right{
-    opacity: 0;
-    transform: translateX(80px);
-    transition: all 0.8s ease;
-}
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(80px);
+            transition: all 0.8s ease;
+        }
 
-.reveal-right.active{
-    opacity: 1;
-    transform: translateX(0);
-}
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
 
-.reveal-zoom{
-    opacity: 0;
-    transform: scale(.85);
-    transition: all 0.8s ease;
-}
+        .reveal-zoom {
+            opacity: 0;
+            transform: scale(.85);
+            transition: all 0.8s ease;
+        }
 
-.reveal-zoom.active{
-    opacity: 1;
-    transform: scale(1);
-}
+        .reveal-zoom.active {
+            opacity: 1;
+            transform: scale(1);
+        }
     </style>
 
 <body>
@@ -1034,9 +1040,9 @@
 
         <nav class="menus">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="pages.html">Pages</a></li>
+                <li><a href="pages.html">Service</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
@@ -1373,10 +1379,10 @@
             <div class="big">Explore the <span>Infinite</span><br>Universe with Us</div>
             <p>Join thousands of stargazers, astronomers, and space enthusiasts. Get weekly cosmic updates, mission
                 news, and sky events in your inbox.</p>
-           <form class="cta-form" id="ctaForm">
-    <input type="email" id="ctaEmail" placeholder="Enter your email address">
-    <button type="submit" class="cta-btn">Join Now</button>
-</form>
+            <form class="cta-form" id="ctaForm">
+                <input type="email" id="ctaEmail" placeholder="Enter your email address">
+                <button type="submit" class="cta-btn">Join Now</button>
+            </form>
         </div>
     </section>
 
@@ -1407,7 +1413,7 @@
 
                 <div class="footer-link">
                     <a href="">About</a>
-                    <a href="">Pages</a>
+                    <a href="">Service</a>
                     <a href="">Event</a>
                     <a href="">Blog</a>
                 </div>
@@ -1579,84 +1585,84 @@
 
         // join now
         const ctaForm = document.getElementById("ctaForm");
-const ctaEmail = document.getElementById("ctaEmail");
+        const ctaEmail = document.getElementById("ctaEmail");
 
-ctaForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+        ctaForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-    const email = ctaEmail.value.trim();
+            const email = ctaEmail.value.trim();
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (email === "") {
-        alert("Please enter your email address");
-        ctaEmail.focus();
-        return;
-    }
+            if (email === "") {
+                alert("Please enter your email address");
+                ctaEmail.focus();
+                return;
+            }
 
-    if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address");
-        ctaEmail.focus();
-        return;
-    }
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address");
+                ctaEmail.focus();
+                return;
+            }
 
-    alert("Thank you for joining!");
+            alert("Thank you for joining!");
 
-    ctaForm.reset();
-});
+            ctaForm.reset();
+        });
 
-//footer validation
+        //footer validation
 
-const footerEmail = document.querySelector(".footer-email");
-const footerBtn = document.querySelector(".footer-btn");
+        const footerEmail = document.querySelector(".footer-email");
+        const footerBtn = document.querySelector(".footer-btn");
 
-footerBtn.addEventListener("click", function (e) {
-    e.preventDefault();
+        footerBtn.addEventListener("click", function (e) {
+            e.preventDefault();
 
-    const email = footerEmail.value.trim();
+            const email = footerEmail.value.trim();
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (email === "") {
-        alert("Please enter your email address");
-        footerEmail.focus();
-        return;
-    }
+            if (email === "") {
+                alert("Please enter your email address");
+                footerEmail.focus();
+                return;
+            }
 
-    if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address");
-        footerEmail.focus();
-        return;
-    }
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address");
+                footerEmail.focus();
+                return;
+            }
 
-    alert("Subscription successful!");
-    footerEmail.value = "";
-});
+            alert("Subscription successful!");
+            footerEmail.value = "";
+        });
 
 
-// Scroll Reveal Animation
+        // Scroll Reveal Animation
 
-const revealElements = document.querySelectorAll(
-    ".reveal, .reveal-left, .reveal-right, .reveal-zoom"
-);
+        const revealElements = document.querySelectorAll(
+            ".reveal, .reveal-left, .reveal-right, .reveal-zoom"
+        );
 
-const revealObserver = new IntersectionObserver((entries) => {
+        const revealObserver = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry => {
+            entries.forEach(entry => {
 
-        if(entry.isIntersecting){
-            entry.target.classList.add("active");
-        }
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
 
-    });
+            });
 
-},{
-    threshold: 0.15
-});
+        }, {
+            threshold: 0.15
+        });
 
-revealElements.forEach(el => {
-    revealObserver.observe(el);
-});
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
     </script>
 </body>
 

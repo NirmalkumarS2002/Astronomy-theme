@@ -94,6 +94,15 @@
             width: 100%;
         }
 
+        
+        .menus ul li a.active::after {
+            width: 100%;
+        }
+
+        .menus ul li a.active {
+            color: orange;
+        }
+
         .menu-btn,
         .close-btn {
             display: none;
@@ -982,8 +991,8 @@
         <nav class="menus">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="pages.html">Pages</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="pages.html">Service</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
@@ -1281,7 +1290,7 @@
                 <h2>Company</h2>
                 <div class="footer-link">
                     <a href="">About</a>
-                    <a href="">Pages</a>
+                    <a href="">Service</a>
                     <a href="">Event</a>
                     <a href="">Blog</a>
                 </div>
