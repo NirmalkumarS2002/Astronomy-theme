@@ -231,6 +231,7 @@
             font-family: "Chelsea Market", cursive;
             text-transform: uppercase;
             line-height: 1.2;
+            letter-spacing: 5px;
             margin-bottom: 20px
         }
 
@@ -974,6 +975,53 @@
                 height: 500px;
             }
         }
+
+
+        /* animation */
+
+        .reveal{
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left{
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: all 0.8s ease;
+}
+
+.reveal-left.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right{
+    opacity: 0;
+    transform: translateX(80px);
+    transition: all 0.8s ease;
+}
+
+.reveal-right.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-zoom{
+    opacity: 0;
+    transform: scale(.85);
+    transition: all 0.8s ease;
+}
+
+.reveal-zoom.active{
+    opacity: 1;
+    transform: scale(1);
+}
     </style>
 
 <body>
@@ -1046,7 +1094,7 @@
     <!-- 1. Solar System Planets -->
     <section class="solar">
 
-        <div class="sec-title">
+        <div class="sec-title reveal">
             <span>Our Solar System</span>
             <h2>Planets of the<br> <span>Milky Way</span></h2>
             <p>From the scorching Mercury to the icy Neptune — explore every planet in our cosmic neighborhood.</p>
@@ -1054,42 +1102,42 @@
 
         <div class="planets-grid">
 
-            <div class="planet-card" style="background-image:url('./src/1.webp')">
+            <div class="planet-card reveal-zoom" style="background-image:url('./src/1.webp')">
                 <div class="overlay">
                     <h3>Mercury</h3>
                     <p>Closest to the Sun. Surface temp reaches 430°C</p>
                 </div>
             </div>
 
-            <div class="planet-card" style="background-image:url('./src/2.webp')">
+            <div class="planet-card reveal-zoom" style="background-image:url('./src/2.webp')">
                 <div class="overlay">
                     <h3>Venus</h3>
                     <p>Hottest planet. Dense CO₂ atmosphere</p>
                 </div>
             </div>
 
-            <div class="planet-card" style="background-image:url('./src/3.webp')">
+            <div class="planet-card reveal-zoom" style="background-image:url('./src/3.webp')">
                 <div class="overlay">
                     <h3>Earth</h3>
                     <p>Our home. Only known planet with life</p>
                 </div>
             </div>
 
-            <div class="planet-card" style="background-image:url('./src/4.webp')">
+            <div class="planet-card reveal-zoom" style="background-image:url('./src/4.webp')">
                 <div class="overlay">
                     <h3>Mars</h3>
                     <p>The Red Planet. Home to Olympus Mons</p>
                 </div>
             </div>
 
-            <div class="planet-card" style="background-image:url('./src/5.webp')">
+            <div class="planet-card reveal-zoom" style="background-image:url('./src/5.webp')">
                 <div class="overlay">
                     <h3>Jupiter</h3>
                     <p>Largest planet with the Great Red Spot</p>
                 </div>
             </div>
 
-            <div class="planet-card" style="background-image:url('./src/6.webp')">
+            <div class="planet-card reveal-zoom" style="background-image:url('./src/6.webp')">
                 <div class="overlay">
                     <h3>Saturn</h3>
                     <p>Famous for its stunning ring system</p>
@@ -1108,7 +1156,7 @@
             <p>Milestones that defined humanity's quest to conquer the cosmos.</p>
         </div>
         <div class="missions-list">
-            <div class="mission-card">
+            <div class="mission-card reveal-left">
                 <div class="mission-num">01</div>
                 <div class="mission-info">
                     <h3>Apollo 11</h3>
@@ -1116,7 +1164,7 @@
                     <span class="mission-badge">July 1969</span>
                 </div>
             </div>
-            <div class="mission-card">
+            <div class="mission-card reveal-left">
                 <div class="mission-num">02</div>
                 <div class="mission-info">
                     <h3>Voyager 1</h3>
@@ -1124,7 +1172,7 @@
                         class="mission-badge">Active</span>
                 </div>
             </div>
-            <div class="mission-card">
+            <div class="mission-card reveal-left">
                 <div class="mission-num">03</div>
                 <div class="mission-info">
                     <h3>Hubble Telescope</h3>
@@ -1132,7 +1180,7 @@
                         class="mission-badge">Since 1990</span>
                 </div>
             </div>
-            <div class="mission-card">
+            <div class="mission-card reveal-left">
                 <div class="mission-num">04</div>
                 <div class="mission-info">
                     <h3>Mars Perseverance</h3>
@@ -1140,7 +1188,7 @@
                         class="mission-badge">Active 2021</span>
                 </div>
             </div>
-            <div class="mission-card">
+            <div class="mission-card reveal-left">
                 <div class="mission-num">05</div>
                 <div class="mission-info">
                     <h3>James Webb Telescope</h3>
@@ -1148,7 +1196,7 @@
                     <span class="mission-badge">Active 2022</span>
                 </div>
             </div>
-            <div class="mission-card">
+            <div class="mission-card reveal-left">
                 <div class="mission-num">06</div>
                 <div class="mission-info">
                     <h3>Artemis Program</h3>
@@ -1170,7 +1218,7 @@
 
         <div class="gallery-grid">
 
-            <div class="gallery-card">
+            <div class="gallery-card reveal-zoom">
                 <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200" alt="Andromeda Galaxy">
                 <div class="gallery-overlay">
                     <h3>Andromeda Galaxy</h3>
@@ -1178,7 +1226,7 @@
                 </div>
             </div>
 
-            <div class="gallery-card">
+            <div class="gallery-card reveal-zoom">
                 <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200" alt="Crab Nebula">
                 <div class="gallery-overlay">
                     <h3>Crab Nebula</h3>
@@ -1186,7 +1234,7 @@
                 </div>
             </div>
 
-            <div class="gallery-card">
+            <div class="gallery-card reveal-zoom">
                 <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200" alt="Saturn Rings">
                 <div class="gallery-overlay">
                     <h3>Saturn's Rings</h3>
@@ -1194,7 +1242,7 @@
                 </div>
             </div>
 
-            <div class="gallery-card">
+            <div class="gallery-card reveal-zoom">
                 <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200" alt="Solar Flare">
                 <div class="gallery-overlay">
                     <h3>Solar Flare</h3>
@@ -1202,7 +1250,7 @@
                 </div>
             </div>
 
-            <div class="gallery-card">
+            <div class="gallery-card reveal-zoom">
                 <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200" alt="Aurora Borealis">
                 <div class="gallery-overlay">
                     <h3>Aurora Borealis</h3>
@@ -1210,7 +1258,7 @@
                 </div>
             </div>
 
-            <div class="gallery-card">
+            <div class="gallery-card reveal-zoom">
                 <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=1200" alt="Deep Field View">
                 <div class="gallery-overlay">
                     <h3>Deep Field View</h3>
@@ -1218,14 +1266,14 @@
                 </div>
             </div>
 
-            <div class="gallery-card">
+            <div class="gallery-card reveal-zoom">
                 <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1200" alt="Milky Way Core">
                 <div class="gallery-overlay">
                     <h3>Milky Way Core</h3>
                     <p>The glowing heart of our home galaxy</p>
                 </div>
             </div>
-            <div class="gallery-card">
+            <div class="gallery-card reveal-zoom">
                 <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200" alt="Eagle Nebula">
                 <div class="gallery-overlay">
                     <h3>Eagle Nebula</h3>
@@ -1244,19 +1292,19 @@
             <p>Mind-bending numbers that reveal the true scale of our cosmos.</p>
         </div>
         <div class="facts-grid">
-            <div class="fact-box">
+            <div class="fact-box reveal">
                 <div class="fact-num" id="c1">0</div>
                 <div class="fact-label">Galaxies in the Observable Universe</div>
             </div>
-            <div class="fact-box">
+            <div class="fact-box reveal">
                 <div class="fact-num" id="c2">0</div>
                 <div class="fact-label">Light-years across the Universe</div>
             </div>
-            <div class="fact-box">
+            <div class="fact-box reveal">
                 <div class="fact-num" id="c3">0</div>
                 <div class="fact-label">Stars in the Milky Way</div>
             </div>
-            <div class="fact-box">
+            <div class="fact-box reveal">
                 <div class="fact-num" id="c4">0</div>
                 <div class="fact-label">Exoplanets Discovered</div>
             </div>
@@ -1271,7 +1319,7 @@
 
             <div class="slider-track">
 
-                <div class="slide-card">
+                <div class="slide-card reveal-right">
                     <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200" alt="">
                     <div class="slide-content">
                         <h3>Mars Mission</h3>
@@ -1279,7 +1327,7 @@
                     </div>
                 </div>
 
-                <div class="slide-card">
+                <div class="slide-card reveal-right">
                     <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=1200" alt="">
                     <div class="slide-content">
                         <h3>Space Explorer</h3>
@@ -1287,7 +1335,7 @@
                     </div>
                 </div>
 
-                <div class="slide-card">
+                <div class="slide-card reveal-right">
                     <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200" alt="">
                     <div class="slide-content">
                         <h3>Galaxy Discovery</h3>
@@ -1295,7 +1343,7 @@
                     </div>
                 </div>
 
-                <div class="slide-card">
+                <div class="slide-card reveal-right">
                     <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200" alt="">
                     <div class="slide-content">
                         <h3>Deep Space</h3>
@@ -1303,7 +1351,7 @@
                     </div>
                 </div>
 
-                <div class="slide-card">
+                <div class="slide-card reveal-right">
                     <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200" alt="">
                     <div class="slide-content">
                         <h3>Cosmic Horizon</h3>
@@ -1321,21 +1369,21 @@
 
     <!-- 6. CTA / Newsletter -->
     <section class="cta-sec">
-        <div class="cta-inner">
+        <div class="cta-inner reveal">
             <div class="big">Explore the <span>Infinite</span><br>Universe with Us</div>
             <p>Join thousands of stargazers, astronomers, and space enthusiasts. Get weekly cosmic updates, mission
                 news, and sky events in your inbox.</p>
-            <div class="cta-form">
-                <input type="email" placeholder="Enter your email address">
-                <button class="cta-btn">Join Now</button>
-            </div>
+           <form class="cta-form" id="ctaForm">
+    <input type="email" id="ctaEmail" placeholder="Enter your email address">
+    <button type="submit" class="cta-btn">Join Now</button>
+</form>
         </div>
     </section>
 
 
     <section class="footer">
 
-        <div class="footer-main">
+        <div class="footer-main reveal">
             <div class="footer-box">
 
                 <a href=""><img src="./src/logo.webp" alt="company logo"></a>
@@ -1528,6 +1576,87 @@
 
         }, 2000);
 
+
+        // join now
+        const ctaForm = document.getElementById("ctaForm");
+const ctaEmail = document.getElementById("ctaEmail");
+
+ctaForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = ctaEmail.value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+        alert("Please enter your email address");
+        ctaEmail.focus();
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        ctaEmail.focus();
+        return;
+    }
+
+    alert("Thank you for joining!");
+
+    ctaForm.reset();
+});
+
+//footer validation
+
+const footerEmail = document.querySelector(".footer-email");
+const footerBtn = document.querySelector(".footer-btn");
+
+footerBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const email = footerEmail.value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+        alert("Please enter your email address");
+        footerEmail.focus();
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        footerEmail.focus();
+        return;
+    }
+
+    alert("Subscription successful!");
+    footerEmail.value = "";
+});
+
+
+// Scroll Reveal Animation
+
+const revealElements = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right, .reveal-zoom"
+);
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+        }
+
+    });
+
+},{
+    threshold: 0.15
+});
+
+revealElements.forEach(el => {
+    revealObserver.observe(el);
+});
     </script>
 </body>
 

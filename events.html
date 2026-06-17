@@ -421,7 +421,7 @@
         ══════════════════════════════════════════ */
         .upcoming-section {
             background: var(--bg-mid);
-            padding: 100px 60px;
+            padding: 100px 20px;
         }
 
         .upcoming-head {
@@ -429,160 +429,222 @@
             max-width: 600px;
             margin: 0 auto 60px;
         }
+/* EVENTS GRID */
+/* EVENTS GRID */
+.events-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
 
-        .events-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 28px;
-        }
+.event-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
-        .event-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            overflow: hidden;
-            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-        }
+.event-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-orange);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
 
-        .event-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--border-orange);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
+.event-img-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 210px;
+    flex-shrink: 0;
+}
 
-        .event-img-wrap {
-            position: relative;
-            overflow: hidden;
-            height: 210px;
-        }
+.event-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
 
-        .event-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+.event-card:hover .event-img-wrap img {
+    transform: scale(1.06);
+}
 
-        .event-card:hover .event-img-wrap img {
-            transform: scale(1.06);
-        }
+.event-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--orange);
+    color: #000;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-family: "Space Grotesk", sans-serif;
+}
 
-        .event-badge {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            background: var(--orange);
-            color: #000;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-family: "Space Grotesk", sans-serif;
-        }
+.event-date-chip {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(3, 8, 16, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 152, 0, 0.35);
+    border-radius: 10px;
+    padding: 8px 12px;
+    text-align: center;
+    color: white;
+}
 
-        .event-date-chip {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: rgba(3, 8, 16, 0.8);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 152, 0, 0.35);
-            border-radius: 10px;
-            padding: 8px 12px;
-            text-align: center;
-            color: white;
-        }
+.event-date-chip .day {
+    display: block;
+    font-size: 22px;
+    font-weight: 800;
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--orange);
+    line-height: 1;
+}
 
-        .event-date-chip .day {
-            display: block;
-            font-size: 22px;
-            font-weight: 800;
-            font-family: "Space Grotesk", sans-serif;
-            color: var(--orange);
-            line-height: 1;
-        }
+.event-date-chip .mon {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
 
-        .event-date-chip .mon {
-            display: block;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.6);
-        }
+.event-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 
-        .event-body {
-            padding: 24px;
-        }
+.event-body h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
 
-        .event-body h3 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 19px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
+.event-body p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 18px;
+}
 
-        .event-body p {
-            font-size: 14px;
-            line-height: 1.75;
-            color: var(--text);
-            margin-bottom: 18px;
-        }
+.event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
 
-        .event-meta {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
+.event-meta span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-        .event-meta span {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.5);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+.event-meta i {
+    color: var(--orange);
+    font-size: 12px;
+}
 
-        .event-meta i {
-            color: var(--orange);
-            font-size: 12px;
-        }
+.event-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
 
-        .event-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
-        }
+.event-price {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--orange);
+}
 
-        .event-price {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--orange);
-        }
+.event-price small {
+    display: block;
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 400;
+}
 
-        .event-price small {
-            font-size: 12px;
-            color: var(--text);
-            font-weight: 400;
-            display: block;
-        }
+.event-footer .btn-primary {
+    white-space: nowrap;
+}
 
-        @media (max-width: 860px) {
-            .upcoming-section {
-                padding: 70px 24px;
-            }
-        }
+/* TABLET */
+@media (max-width: 1024px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
 
+/* MOBILE */
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
+    .event-card {
+        width: 100%;
+    }
+
+    .event-img-wrap {
+        height: 220px;
+    }
+
+    .event-body {
+        padding: 20px;
+    }
+
+    .event-footer {
+        gap: 12px;
+    }
+
+    .event-footer .btn-primary {
+        padding: 12px 22px;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    .event-img-wrap {
+        height: 200px;
+    }
+
+    .event-body h3 {
+        font-size: 17px;
+    }
+
+    .event-price {
+        font-size: 18px;
+    }
+
+    .event-footer .btn-primary {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
         /* ══════════════════════════════════════════
            SECTION 3 — FEATURED / SPOTLIGHT EVENT
         ══════════════════════════════════════════ */
@@ -1706,54 +1768,45 @@
                 <h3>Reserve Your Spot</h3>
                 <p>Fill in your details and we will confirm your seat within 24 hours.</p>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" placeholder="Ravi">
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" placeholder="Kumar">
-                    </div>
-                </div>
+              <form id="registerForm">
 
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="ravi@example.com">
-                </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="firstName" placeholder="Ravi">
+        </div>
 
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" placeholder="+91 98765 43210">
-                </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="lastName" placeholder="Kumar">
+        </div>
+    </div>
 
-                <div class="form-group">
-                    <label>Select Event</label>
-                    <select>
-                        <option value="">Choose an event...</option>
-                        <option>Perseid Meteor Shower Night — Jul 12</option>
-                        <option>Lunar Photography Workshop — Jul 19</option>
-                        <option>Beyond the Milky Way Talk — Aug 02</option>
-                        <option>Solar Eclipse Expedition — Aug 22</option>
-                        <option>Planets in Alignment Night — Sep 09</option>
-                        <option>AstroCon 2026 — Sep 28-30</option>
-                        <option>Young Astronomers Science Camp — Oct 18</option>
-                    </select>
-                </div>
+    <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="ravi@example.com">
+    </div>
 
-                <div class="form-group">
-                    <label>Experience Level</label>
-                    <select>
-                        <option value="">Select your level...</option>
-                        <option>Beginner — Just starting out</option>
-                        <option>Intermediate — Own a telescope</option>
-                        <option>Advanced — Active observer or researcher</option>
-                    </select>
-                </div>
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="phone" placeholder="+91 98765 43210">
+    </div>
 
-                <a href="#" class="btn-primary" style="display:block; text-align:center; margin-top:8px;">Confirm
-                    Registration</a>
-            </div>
+    <div class="form-group">
+        <label>Experience Level</label>
+        <select id="experience">
+            <option value="">Select your level...</option>
+            <option>Beginner — Just starting out</option>
+            <option>Intermediate — Own a telescope</option>
+            <option>Advanced — Active observer or researcher</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn-primary" style="width:100%;margin-top:8px;">
+     Registration
+    </button>
+
+</form>
         </div>
     </section>
 
@@ -1899,6 +1952,127 @@
                 btn.classList.add("active");
             });
         });
+
+        const form = document.getElementById("registerForm");
+
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+const experience = document.getElementById("experience");
+
+/* Name Field - Only Letters & Spaces */
+[firstName, lastName].forEach(input => {
+    input.addEventListener("input", () => {
+        input.value = input.value.replace(/[^A-Za-z\s]/g, "");
+    });
+});
+
+/* Phone Field - Only Numbers */
+phone.addEventListener("input", () => {
+    phone.value = phone.value.replace(/[^0-9]/g, "");
+});
+
+/* Form Validation */
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const fname = firstName.value.trim();
+    const lname = lastName.value.trim();
+    const mail = email.value.trim();
+    const mobile = phone.value.trim();
+
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[0-9]{10}$/;
+
+    if (fname === "") {
+        alert("Please enter your first name");
+        firstName.focus();
+        return;
+    }
+
+    if (!nameRegex.test(fname)) {
+        alert("First name should contain only letters");
+        firstName.focus();
+        return;
+    }
+
+    if (lname === "") {
+        alert("Please enter your last name");
+        lastName.focus();
+        return;
+    }
+
+    if (!nameRegex.test(lname)) {
+        alert("Last name should contain only letters");
+        lastName.focus();
+        return;
+    }
+
+    if (mail === "") {
+        alert("Please enter your email address");
+        email.focus();
+        return;
+    }
+
+    if (!emailRegex.test(mail)) {
+        alert("Please enter a valid email address");
+        email.focus();
+        return;
+    }
+
+    if (mobile === "") {
+        alert("Please enter your phone number");
+        phone.focus();
+        return;
+    }
+
+    if (!phoneRegex.test(mobile)) {
+        alert("Phone number must contain exactly 10 digits");
+        phone.focus();
+        return;
+    }
+
+    if (experience.value === "") {
+        alert("Please select your experience level");
+        experience.focus();
+        return;
+    }
+
+    alert("Registration Successful!");
+
+    form.reset();
+});
+
+
+//footer validation
+
+const footerEmail = document.querySelector(".footer-email");
+const footerBtn = document.querySelector(".footer-btn");
+
+footerBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const email = footerEmail.value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+        alert("Please enter your email address");
+        footerEmail.focus();
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        footerEmail.focus();
+        return;
+    }
+
+    alert("Subscription successful!");
+    footerEmail.value = "";
+});
 
     </script>
 </body>

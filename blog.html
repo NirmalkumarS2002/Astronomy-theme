@@ -1236,40 +1236,38 @@
                 <h3>Join 85,000+ Readers</h3>
                 <p>Free forever. We never share your data.</p>
  
-                <div class="form-group">
-                    <label>Your Name</label>
-                    <input type="text" placeholder="Ravi Kumar">
-                </div>
- 
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="ravi@example.com">
-                </div>
- 
-                <div class="form-group">
-                    <label>I am interested in</label>
-                    <select>
-                        <option value="">Select your main interest...</option>
-                        <option>Planets & Solar System</option>
-                        <option>Deep Sky Objects</option>
-                        <option>Astrophotography</option>
-                        <option>Space Science & Research</option>
-                        <option>Beginner Guides</option>
-                        <option>Everything Cosmic</option>
-                    </select>
-                </div>
- 
-                <div class="form-group">
-                    <label>How often would you like emails?</label>
-                    <select>
-                        <option>Weekly Digest</option>
-                        <option>Monthly Only</option>
-                        <option>Breaking News Only</option>
-                    </select>
-                </div>
- 
-                <a href="#" class="btn-primary">Subscribe Free</a>
-                <p class="nl-note">By subscribing you agree to our Privacy Policy. Unsubscribe in one click at any time.</p>
+                <form id="newsletterForm">
+
+    <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="subscriberName" placeholder="Ravi Kumar">
+    </div>
+
+    <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="subscriberEmail" placeholder="ravi@example.com">
+    </div>
+
+    <div class="form-group">
+        <label>How often would you like emails?</label>
+        <select id="emailFrequency">
+            <option value="">Select Frequency</option>
+            <option>Weekly Digest</option>
+            <option>Monthly Only</option>
+            <option>Breaking News Only</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn-primary">
+        Subscribe Free
+    </button>
+
+    <p class="nl-note">
+        By subscribing you agree to our Privacy Policy.
+        Unsubscribe in one click at any time.
+    </p>
+
+</form>
             </div>
         </div>
     </section>
@@ -1633,6 +1631,91 @@
                 btn.classList.add("active");
             });
         });
+
+        const newsletterForm = document.getElementById("newsletterForm");
+
+const subscriberName = document.getElementById("subscriberName");
+const subscriberEmail = document.getElementById("subscriberEmail");
+const emailFrequency = document.getElementById("emailFrequency");
+
+/* Name Field - Only Letters & Spaces */
+subscriberName.addEventListener("input", () => {
+    subscriberName.value = subscriberName.value.replace(/[^A-Za-z\s]/g, "");
+});
+
+/* Newsletter Form Validation */
+newsletterForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = subscriberName.value.trim();
+    const email = subscriberEmail.value.trim();
+
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (name === "") {
+        alert("Please enter your name");
+        subscriberName.focus();
+        return;
+    }
+
+    if (!nameRegex.test(name)) {
+        alert("Name should contain only letters");
+        subscriberName.focus();
+        return;
+    }
+
+    if (email === "") {
+        alert("Please enter your email address");
+        subscriberEmail.focus();
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        subscriberEmail.focus();
+        return;
+    }
+
+    if (emailFrequency.value === "") {
+        alert("Please select email frequency");
+        emailFrequency.focus();
+        return;
+    }
+
+    alert("Thank you for subscribing!");
+
+    newsletterForm.reset();
+});
+
+
+//footer validation
+
+const footerEmail = document.querySelector(".footer-email");
+const footerBtn = document.querySelector(".footer-btn");
+
+footerBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const email = footerEmail.value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+        alert("Please enter your email address");
+        footerEmail.focus();
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        footerEmail.focus();
+        return;
+    }
+
+    alert("Subscription successful!");
+    footerEmail.value = "";
+});
 
     </script>
 </body>
