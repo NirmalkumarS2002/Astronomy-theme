@@ -1007,6 +1007,81 @@
 
         }
 
+
+        .custom-frequency{
+    position:relative;
+    width:100%;
+}
+
+.frequency-btn{
+    width:100%;
+    height:48px;
+    padding:0 18px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(12px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.frequency-btn:hover{
+    border-color:#ffb020;
+}
+
+.frequency-btn i{
+    color:#fff;
+    transition:.3s;
+}
+
+.custom-frequency.active i{
+    transform:rotate(180deg);
+}
+
+.selected-frequency{
+    color:#cfcfcf;
+    font-size:15px;
+}
+
+.frequency-options{
+    position:absolute;
+    top:58px;
+    left:0;
+    width:100%;
+    list-style:none;
+    background:rgba(10,15,25,.95);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,176,32,.25);
+    border-radius:12px;
+    overflow:hidden;
+    display:none;
+    z-index:1000;
+}
+
+.custom-frequency.active .frequency-options{
+    display:block;
+}
+
+.frequency-options li{
+    padding:14px 18px;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.frequency-options li:last-child{
+    border-bottom:none;
+}
+
+.frequency-options li:hover{
+    background:rgba(255,176,32,.12);
+    color:#ffb020;
+}
+
     </style>
 
 <body>
@@ -1259,7 +1334,7 @@
     ══════════════════════════════════ -->
     <section class="newsletter-section">
         <img class="nl-bg"
-             src="https://images.unsplash.com/photo-1507499739999-097706ad8914?w=1600&q=80"
+             src="./src/event-bg.webp"
              alt="stars bg">
         <div class="nl-glow"></div>
  
@@ -1306,15 +1381,34 @@
         <input type="email" id="subscriberEmail" placeholder="ravi@example.com">
     </div>
 
-    <div class="form-group">
-        <label>How often would you like emails?</label>
-        <select id="emailFrequency">
-            <option value="">Select Frequency</option>
-            <option>Weekly Digest</option>
-            <option>Monthly Only</option>
-            <option>Breaking News Only</option>
-        </select>
+   <div class="form-group">
+    <label>How often would you like emails?</label>
+
+    <div class="custom-frequency">
+
+        <div class="frequency-btn">
+            <span class="selected-frequency">Select Frequency</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+
+        <ul class="frequency-options">
+            <li data-value="Weekly Digest">
+                Weekly Digest
+            </li>
+
+            <li data-value="Monthly Only">
+                Monthly Only
+            </li>
+
+            <li data-value="Breaking News Only">
+                Breaking News Only
+            </li>
+        </ul>
+
+        <input type="hidden" id="emailFrequency" name="emailFrequency">
+
     </div>
+</div>
 
     <button type="submit" class="btn-primary">
         Subscribe Free
@@ -1769,6 +1863,40 @@ footerBtn.addEventListener("click", function (e) {
     element.addEventListener("click", () => {
         window.location.href = "404.html";
     });
+
+});
+
+//drop
+
+const frequencyDropdown = document.querySelector(".custom-frequency");
+const frequencyBtn = document.querySelector(".frequency-btn");
+const frequencyText = document.querySelector(".selected-frequency");
+const frequencyInput = document.getElementById("emailFrequency");
+
+frequencyBtn.addEventListener("click", () => {
+    frequencyDropdown.classList.toggle("active");
+});
+
+document.querySelectorAll(".frequency-options li").forEach(option => {
+
+    option.addEventListener("click", () => {
+
+        frequencyText.textContent = option.textContent.trim();
+        frequencyText.style.color = "#fff";
+
+        frequencyInput.value = option.dataset.value;
+
+        frequencyDropdown.classList.remove("active");
+
+    });
+
+});
+
+document.addEventListener("click", (e) => {
+
+    if(!frequencyDropdown.contains(e.target)){
+        frequencyDropdown.classList.remove("active");
+    }
 
 });
 

@@ -1162,6 +1162,8 @@
         }
 
 
+
+
         
         /* Footer */
 
@@ -1379,6 +1381,85 @@
         }
 
         }
+
+
+        .custom-select{
+    position:relative;
+      z-index:9999;
+    width:100%;
+}
+
+.select-btn{
+    height:48px;
+    width:100%;
+    padding:0 18px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(12px);
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    transition:.3s;
+  
+}
+
+.select-btn:hover{
+    border-color:#ffb020;
+}
+
+.select-btn i{
+    color:#fff;
+    transition:.3s;
+}
+
+.custom-select.active i{
+    transform:rotate(180deg);
+}
+
+.selected-option{
+    color:#cfcfcf;
+    font-size:15px;
+}
+
+
+.options{
+    position:absolute;
+    top:58px;
+    left:0;
+    width:100%;
+    list-style:none;
+    background:rgba(10,15,25,.95);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,176,32,.25);
+    border-radius:12px;
+    overflow:hidden;
+    display:none;
+        z-index:999999;
+}
+
+.custom-select.active .options{
+    display:block;
+}
+
+.options li{
+    padding:14px 18px;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.options li:last-child{
+    border-bottom:none;
+}
+
+.options li:hover{
+    background:rgba(255,176,32,.12);
+    color:#ffb020;
+}
     </style>
 
 <body>
@@ -1849,15 +1930,34 @@
         <input type="tel" id="phone" placeholder="+91 98765 43210">
     </div>
 
-    <div class="form-group">
-        <label>Experience Level</label>
-        <select id="experience">
-            <option value="">Select your level...</option>
-            <option>Beginner — Just starting out</option>
-            <option>Intermediate — Own a telescope</option>
-            <option>Advanced — Active observer or researcher</option>
-        </select>
+   <div class="form-group">
+    <label>Experience Level</label>
+
+    <div class="custom-select">
+
+        <div class="select-btn">
+            <span class="selected-option">Select your level...</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+
+        <ul class="options">
+            <li data-value="Beginner">
+                Beginner
+            </li>
+
+            <li data-value="Intermediate">
+                Intermediate
+            </li>
+
+            <li data-value="Advanced">
+                Advanced
+            </li>
+        </ul>
+
+        <input type="hidden" id="experience" name="experience">
+
     </div>
+</div>
 
     <button type="submit" class="btn-primary" style="width:100%;margin-top:8px;">
      Registration
@@ -2126,6 +2226,41 @@ footerBtn.addEventListener("click", function (e) {
     element.addEventListener("click", () => {
         window.location.href = "404.html";
     });
+
+});
+
+//drop down
+
+const customSelect = document.querySelector(".custom-select");
+const selectBtn = document.querySelector(".select-btn");
+const options = document.querySelectorAll(".options li");
+const selectedOption = document.querySelector(".selected-option");
+const hiddenInput = document.getElementById("experience");
+
+selectBtn.addEventListener("click", () => {
+    customSelect.classList.toggle("active");
+});
+
+options.forEach(option => {
+
+    option.addEventListener("click", () => {
+
+        selectedOption.textContent = option.textContent.trim();
+        selectedOption.style.color = "#fff";
+
+        hiddenInput.value = option.dataset.value;
+
+        customSelect.classList.remove("active");
+
+    });
+
+});
+
+document.addEventListener("click", (e) => {
+
+    if(!customSelect.contains(e.target)){
+        customSelect.classList.remove("active");
+    }
 
 });
     </script>
