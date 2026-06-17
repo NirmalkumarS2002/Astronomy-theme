@@ -175,6 +175,10 @@
         color: orange;
     }
 
+    .login-footer a:first-child{
+        color: orange;
+    }
+
     .login-socials {
         display: flex;
         gap: 10px;
@@ -208,7 +212,7 @@
             <p>Login To Your Account</p>
         </div>
 
-        <form class="form">
+        <form class="form"  id="loginForm">
 
             <div class="input-box">
 
@@ -246,12 +250,12 @@
 
                 <div class="input-field">
                     <input type="password" name="password" id="password" placeholder="Enter Your Password">
-                    <span class="material-symbols-outlined formicons">visibility_off</span>
+                    <span class="material-symbols-outlined formicons passicon">visibility_off</span>
                 </div>
 
             </div>
 
-            <button class="login-btn"><span class="material-symbols-outlined">login </span>Login </button>
+            <button class="login-btn" type="submit"><span class="material-symbols-outlined">login </span>Login </button>
 
         </form>
 
@@ -266,7 +270,7 @@
                 <div class="social-icon errorpage"><i class="fa-brands fa-youtube"></i></div>
             </div>
 
-            <p>Don't have an account? <a href="">Sign Up</a></p>
+            <p>Don't have an account? <a href="sign.html">Sign Up</a></p>
 
             <a href="">Forgot Password</a>
 
@@ -285,6 +289,80 @@
                 roleSelect.classList.add("selected");
             }
         });
+
+        const loginForm = document.getElementById("loginForm");
+
+const role = document.getElementById("role");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+
+loginForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const selectedRole = role.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (selectedRole === "") {
+        alert("Please select a role");
+        role.focus();
+        return;
+    }
+
+    if (emailValue === "") {
+        alert("Please enter your email address");
+        email.focus();
+        return;
+    }
+
+    if (!emailRegex.test(emailValue)) {
+        alert("Please enter a valid email address");
+        email.focus();
+        return;
+    }
+
+    if (passwordValue === "") {
+        alert("Please enter your password");
+        password.focus();
+        return;
+    }
+
+    if (passwordValue.length < 6) {
+        alert("Password must be at least 6 characters");
+        password.focus();
+        return;
+    }
+
+    /* Redirect Based On Role */
+
+    if (selectedRole === "Admin") {
+        window.location.href = "admin-dashboard.html";
+    }
+
+    else if (selectedRole === "Client") {
+        window.location.href = "client-dashboard.html";
+    }
+
+});
+//pass iocn
+
+const passIcon = document.querySelector(".passicon");
+const passwordInput = document.getElementById("password");
+
+passIcon.addEventListener("click", () => {
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        passIcon.textContent = "visibility";
+    } else {
+        passwordInput.type = "password";
+        passIcon.textContent = "visibility_off";
+    }
+
+});
     </script>
 </body>
 
