@@ -338,13 +338,18 @@ loginForm.addEventListener("submit", function (e) {
 
     /* Redirect Based On Role */
 
-    if (selectedRole === "Admin") {
-        window.location.href = "admin-dashboard.html";
-    }
+   // Save Email
+localStorage.setItem("userEmail", emailValue);
 
-    else if (selectedRole === "Client") {
-        window.location.href = "client-dashboard.html";
-    }
+// Save Role
+localStorage.setItem("userRole", selectedRole);
+
+if (selectedRole === "Admin") {
+    window.location.href = "admin.html";
+}
+else if (selectedRole === "Client") {
+    window.location.href = "client.html";
+}
 
 });
 //pass iocn
