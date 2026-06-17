@@ -210,10 +210,10 @@
 
         .about-hero-content h1 {
             font-family: "Chelsea Market", cursive;
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            line-height: 1.1;
+            line-height: 1.3;
             color: #fff;
             margin-bottom: 24px;
+            font-size: clamp(35px, 5vw, 70px);
         }
 
         .about-hero-content h1 span {
@@ -243,6 +243,37 @@
         .hero-cta:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 30px rgba(255, 152, 0, 0.45);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, .35);
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .scroll-hint i {
+            animation: bounce 1.8s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(7px)
+            }
         }
 
         /* ════════════════════════════════════
@@ -711,7 +742,7 @@
         }
 
 
-      
+
         /* Footer */
 
         .footer {
@@ -829,7 +860,7 @@
         }
 
         .footer-footer p {
-            font-size: 15   px;
+            font-size: 15 px;
         }
 
         .policy a {
@@ -952,6 +983,11 @@
             <p>We are a team of astronomers, engineers, and visionaries dedicated to unlocking the mysteries of the
                 cosmos — from our nearest planetary neighbors to the farthest galaxies ever observed.</p>
             <a href="#mission" class="hero-cta">Discover Our Story</a>
+        </div>
+
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
         </div>
     </section>
 
