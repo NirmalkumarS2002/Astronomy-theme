@@ -148,7 +148,7 @@
                 top: 0px;
                 left: 0px;
                 width: 70%;
-                padding: 27px 25px;
+                padding: 70px 25px;
                 gap: 30px;
             }
 
@@ -156,6 +156,10 @@
                 flex-direction: column;
             }
 
+            .logo{
+                position: relative;
+                z-index: 1001;
+            }
             .logo img {
                 width: 160px;
             }
@@ -1092,6 +1096,7 @@
         </div>
 
         <nav class="menus">
+
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -1100,7 +1105,7 @@
                 <li><a href="blog.html">Blog</a></li>
             </ul>
 
-           <a href="login.html"><button class="nav-btn">Login</button></a> 
+            <a href="login.html"><button class="nav-btn">Login</button></a>
         </nav>
 
         <div class="menu-btn">
@@ -1713,17 +1718,17 @@
             revealObserver.observe(el);
         });
 
-                //error page
+        //error page
 
         document.querySelectorAll(".errorpage").forEach(element => {
 
-    element.style.cursor = "pointer";
+            element.style.cursor = "pointer";
 
-    element.addEventListener("click", () => {
-        window.location.href = "404.html";
-    });
+            element.addEventListener("click", () => {
+                window.location.href = "404.html";
+            });
 
-});
+        });
     </script>
 </body>
 
